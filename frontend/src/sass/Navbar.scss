@@ -1,5 +1,48 @@
 .navcontainer {
     height: 100px;
     width: 100vw;
-    background-color: blue;
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
 }
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.iconcontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 70px;
+    height: 70px;
+    color: #A1A4B2;
+}
+
+.iconcontainer:hover {
+    color: #E28F83;
+
+    .iconNav {
+        background-color: #E28F83;
+        color: #E28F83;
+    }
+
+}
+
+.iconNav {
+    display: flex;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 15px;
+
+
+}
+
+// .iconNav:hover {
+//     background-color: #E28F83;
+//     color: #E28F83;
+// }
