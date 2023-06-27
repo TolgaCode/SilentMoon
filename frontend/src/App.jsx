@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <h1>Silent Moon</h1>
+      {/* <h1>Silent Moon</h1> */}
       <Routes>
         <Route path='/home' element={<HomeView />} />
         <Route path='/signup' element={<SignUp />} />

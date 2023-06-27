@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
+import "../sass/SignUp.scss"
+
 const SignUp = () => {
     const [data, setData] = useState({
         name: "",
@@ -28,7 +30,7 @@ const SignUp = () => {
     };
 
     return (
-        <>
+        <section>
             <h1>Create your Account</h1>
             <form onSubmit={handleSubmit}>
                 <input type="text" id="name" placeholder="NAME" value={data.name} onChange={(e) => { setData({ ...data, name: e.target.value }) }} />
@@ -38,8 +40,8 @@ const SignUp = () => {
 
                 <button>REGISTER</button>
             </form>
-            <Link to={"/login"}>You are already a User. Click here</Link>
-        </>
+            <Link className="Link" to={"/login"}>You are already a User. <span> Click here</span></Link>
+        </section>
     );
 }
 export default SignUp;
