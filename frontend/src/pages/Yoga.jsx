@@ -1,10 +1,14 @@
+import Navbar from '../components/Navbar'
+
 const Yoga = () => {
-    
-    
-    return ( 
+
+
+    return (
         <>
+            <h1>Yoga</h1>
+            <Navbar />
         </>
     );
 }
- 
+
 export default Yoga;
