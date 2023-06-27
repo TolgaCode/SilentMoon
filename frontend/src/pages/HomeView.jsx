@@ -1,10 +1,13 @@
+import Navbar from "../components/Navbar";
+
 const HomeView = () => {
-    
-    
-    return ( 
+
+
+    return (
         <>
+            <Navbar />
         </>
     );
 }
- 
+
 export default HomeView;
