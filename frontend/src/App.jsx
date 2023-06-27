@@ -1,7 +1,9 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import './App.css'
 import { Routes, Route } from 'react-router-dom';
 import HomeView from './pages/HomeView';
+import SignUp from './components/SignUp';
+import LogIn from './components/LogIn';
 
 function App() {
 
@@ -11,6 +13,8 @@ function App() {
       <h1>Silent Moon</h1>
       <Routes>
         <Route path='/home' element={<HomeView />} />
+        <Route path='/signup' element={<SignUp />} />
+        <Route path='/login' element={<LogIn />} />
       </Routes>
     </>
   )
