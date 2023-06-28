@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 
 import { User } from "./model/User.js";
-// import { authenticateToken, generateAccessToken } from "./lib/jwt.js";
+import { /*authenticateToken,*/ generateAccessToken } from "./lib/jwt.js";
 import cookieParser from "cookie-parser";
 
 dotenv.config({ path: new URL("../.env", import.meta.url).pathname });
@@ -21,10 +21,6 @@ app.use(cors());
 app.get("/status", (req, res) => {
     res.send({ status: "OK" });
 });
-
-// app.get("/api/signup", (req, res) => {
-//     res.send({ status: "OK" });
-// });
 
 app.post("/api/signup", async (req, res) => {
     // neuen User erstellen
@@ -56,6 +52,37 @@ app.post("/api/signup", async (req, res) => {
     }
 });
 
+app.post("/api/login", async (req, res) => {
+    const { email } = req.body;
+    // finde user mit email
+    // hash und salt sind im schema als select false deklariert
+    // um sie mit auszugeben müssen wir sie explicit selectieren
+    const user = await User.findOne({ email }).select("+hash").select("+salt");
+    if (!user) {
+        return res
+            .status(401)
+            .send({ error: { message: "Email and password combination wrong!" } });
+    }
+
+    // vergleiche passwort mit user.verifyPassword
+    const isVerified = user.verifyPassword(req.body.password);
+    if (isVerified) {
+        const token = generateAccessToken({ email });
+        res.cookie("auth", token, { httpOnly: true, maxAge: 1000 * 60 * 30 });
+        return res.send({ data: { token } });
+    }
+
+    res
+        .status(401)
+        .send({ error: { message: "Email and password combination wrong!" } });
+});
+
+// _________________
+// app.get("/api/verified", authenticateToken, async (req, res) => {
+//     const user = await User.findOne({ email: req.userEmail });
+//     res.send(user);
+// });
+// _________________
 
 app.listen(PORT, () => {
     console.log("Server running on Port:", PORT);

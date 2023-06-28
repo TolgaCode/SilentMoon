@@ -18,7 +18,6 @@ const SignUp = () => {
         e.preventDefault();
         console.log(data);
 
-        // Route "/api/signup" muss noch überprüft werden
         await axios.post("http://localhost:3000/api/signup", data)
             .then((res) => {
                 console.log(res);
