@@ -15,8 +15,8 @@ const LogIn = () => {
     const loginHandler = async (e) => {
         e.preventDefault()
         console.log(user)
-        // Route muss im BE überprüft werden
-        await axios.post("/api/login", user)
+
+        await axios.post("http://localhost:3000/api/login", user)
             .then((res) => {
                 console.log(res)
                 navigate("/homeview")
@@ -24,7 +24,6 @@ const LogIn = () => {
                 console.error(err)
             })
     }
-
 
     return (
         <section>
