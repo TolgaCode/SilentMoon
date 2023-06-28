@@ -54,9 +54,7 @@ app.post("/api/signup", async (req, res) => {
 
 app.post("/api/login", async (req, res) => {
     const { email } = req.body;
-    // finde user mit email
-    // hash und salt sind im schema als select false deklariert
-    // um sie mit auszugeben müssen wir sie explicit selectieren
+
     const user = await User.findOne({ email }).select("+hash").select("+salt");
     if (!user) {
         return res
