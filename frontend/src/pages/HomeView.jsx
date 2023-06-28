@@ -5,7 +5,7 @@ const HomeView = () => {
 
     return (
         <>
-            <h1>Hallo</h1>
+            <h1>Home</h1>
             <Navbar />
         </>
     );
