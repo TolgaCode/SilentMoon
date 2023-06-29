@@ -1,7 +1,9 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
+import mongoose from "mongoose";
 
+import { Video } from "./model/Video.js"
 import { User } from "./model/User.js";
 import { /*authenticateToken,*/ generateAccessToken } from "./lib/jwt.js";
 import cookieParser from "cookie-parser";
@@ -14,6 +16,11 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
+mongoose.connect(process.env.DB_TEST);
+
+let gridFSBucket = new mongoose.mongo.GridFSBucket(mongoose.connection, {
+    bucketName: 'videobucket'
+});
 
 // unklar ob relevant: aber server läuft dann nicht mehr
 // app.use(express.static(ReactAppDistPath.pathname));
