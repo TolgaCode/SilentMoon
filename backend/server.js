@@ -15,13 +15,9 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
 
-// unklar ob relevant: aber server läuft dann nicht mehr
-// app.use(express.static(ReactAppDistPath.pathname));
 
-app.get("/status", (req, res) => {
-    res.send({ status: "OK" });
-});
-
+// ========================
+// SignUp
 app.post("/api/signup", async (req, res) => {
     // neuen User erstellen
     const { name, surname, email } = req.body;
@@ -52,6 +48,9 @@ app.post("/api/signup", async (req, res) => {
     }
 });
 
+
+// ========================
+// LogIn
 app.post("/api/login", async (req, res) => {
     const { email } = req.body;
 
@@ -62,7 +61,7 @@ app.post("/api/login", async (req, res) => {
             .send({ error: { message: "Email and password combination wrong!" } });
     }
 
-    // vergleiche passwort mit user.verifyPassword
+    // vergleicht Passwort mit user.verifyPassword
     const isVerified = user.verifyPassword(req.body.password);
     if (isVerified) {
         const token = generateAccessToken({ email });
@@ -74,6 +73,15 @@ app.post("/api/login", async (req, res) => {
         .status(401)
         .send({ error: { message: "Email and password combination wrong!" } });
 });
+
+
+// ========================
+// LogOut
+app.post("/api/logout", (req, res) => {
+    res.clearCookie("auth");
+    res.send("Logged out successfully")
+})
+
 
 // _________________
 // app.get("/api/verified", authenticateToken, async (req, res) => {

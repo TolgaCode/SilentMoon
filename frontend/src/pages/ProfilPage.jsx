@@ -1,4 +1,6 @@
-import Navbar from '../components/Navbar'
+import LogOut from '../components/LogOut';
+import Navbar from '../components/Navbar';
+
 
 const ProfilPage = () => {
 
@@ -6,6 +8,7 @@ const ProfilPage = () => {
     return (
         <>
             <h1>Profil</h1>
+            <LogOut />
             <Navbar />
         </>
     );
