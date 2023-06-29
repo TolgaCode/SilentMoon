@@ -100,6 +100,7 @@ app.get('/api/yogavideos/', async (req, res) => {
     // if the condition is true the level/category property and corresponding value is added to the query
     try {
         const videos = await Video.find({
+            // using object spreader to conditionally include the level property when the condition is met, otherwise the resulting object will be empty
             // only filter for level, if level is not undefined or 'undefined
             ...((level !== undefined && level !== 'undefined') && { level: level }),
             ...((category !== undefined && category !== 'undefined') && { category: category })
@@ -111,7 +112,20 @@ app.get('/api/yogavideos/', async (req, res) => {
     catch (err) {
         console.error(err)
     }
-})
+});
+
+app.get('/api/yogavideos/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
+        const video = await Video.findOne({ _id: id });
+        res.send(video)
+    }
+    catch (err) {
+        console.error(err)
+    }
+});
+
+
 
 app.listen(PORT, () => {
     console.log("Server running on Port:", PORT);
