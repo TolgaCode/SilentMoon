@@ -139,7 +139,56 @@ app.get('/api/thumbnail/:thumbnail', async (req, res) => {
     }
 })
 
+// api route to get the actual video
+app.get('/api/videostream/:filename', async (req, res) => {
+    const { filename } = req.params;
 
+    // the range header is used to request specifc byte ranges of a file when streaming
+    // specific byte ranges refer to a portion of the file that is requested based on a range of byte positions, therefore one can request and receive only a specific portion of a file instead of downloading it completly
+    const range = req.headers.range;
+    // test console.log(range)
+
+    const video = await Video.findOne({ filename: filename });
+    const fileSize = video.filesize
+
+    // if the range header exits a range request has been made
+    if (range) {
+        const parts = range.replace(/bytes=/, "").split("-");
+        const start = parseInt(parts[0], 10);
+        const end = parts[1]
+            ? parseInt(parts[1], 10)
+            : fileSize;
+
+        // when a specific byte range of a video file is requested, the server divides the file into smaller chunks to transmit only the requested portion
+        const chunksize = (end - start) + 1;
+        // opens a download stream, specifying the start and end postions to only retrieve the requested range
+        const file = gridFSBucket.openDownloadStreamByName(video.filename, { start, end });
+        // sets the response headers to indicate the content being sent
+        const head = {
+            "Content-Range": `bytes ${start}-${end - 1}/${fileSize}`,
+            "Accept-Ranges": "bytes",
+            "Content-Length": chunksize,
+            "Content-Type": "video/mp4",
+        };
+        // 206 statuscode is used to respond to the requested byte range, along with it is the head that carries information about the conetnt-range and -length
+        res.writeHead(206, head);
+        // while reading the mp4 file it's piped towards the frontend
+        file.pipe(res);
+    }
+    else {
+        try {
+            const head = {
+                "Content-Length": fileSize,
+                "Content-Type": "video/mp4"
+            };
+            res.writeHead(200, head);
+            let file = gridFSBucket.openDownloadStreamByName(video.filename).pipe(res)
+        }
+        catch (err) {
+            console.error(err)
+        }
+    }
+})
 
 app.listen(PORT, () => {
     console.log("Server running on Port:", PORT);
