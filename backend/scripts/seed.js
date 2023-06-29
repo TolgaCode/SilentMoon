@@ -1,15 +1,16 @@
-import fs from 'fs';
+import fs from 'fs'
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import thumbsupply from 'thumbsupply';
+import thumbsupply from 'thumbsupply'
 
 import data from './seed_test_data.json' assert {type: 'json'};
-
 import { Video } from '../model/Video.js'
 
-dotenv.config({ path: new URL('../../.env', import.meta.url).pathanme });
 
-mongoose.connect(process.env.DB_TEST)
+dotenv.config({ path: new URL("../../.env", import.meta.url).pathname });
+
+mongoose.connect(process.env.DB)
+
 
 // GridFSBucket provides methods for working with files stored in the bucket
 // creating this bucket allows to perfom tasks as retrieving, updating etc. in the MongoDB using GridFS storage system
@@ -50,5 +51,5 @@ for await (let videoData of data.videos) {
 
     await video.save();
 
-    mongoose.disconnect();
+    // mongoose.disconnect();
 }
