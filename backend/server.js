@@ -18,6 +18,9 @@ app.use(cookieParser());
 app.use(cors());
 mongoose.connect(process.env.DB_TEST);
 
+// GridFSBucket provides methods for working with files stored in the bucket
+// creating this bucket allows to perfom tasks as retrieving, updating etc. in the MongoDB using GridFS storage system
+// mongoose.connect represents the active MongoDB connection managed by mongoose 
 let gridFSBucket = new mongoose.mongo.GridFSBucket(mongoose.connection, {
     bucketName: 'videobucket'
 });
@@ -88,6 +91,27 @@ app.post("/api/login", async (req, res) => {
 //     res.send(user);
 // });
 // _________________
+
+// api route to receive all the videos or only the once you filteres using level and category query
+app.get('/api/yogavideos/', async (req, res) => {
+    let { level, category } = req.query;
+
+    // using spread operator along with conditional logic including the level and category criteria 
+    // if the condition is true the level/category property and corresponding value is added to the query
+    try {
+        const videos = await Video.find({
+            // only filter for level, if level is not undefined or 'undefined
+            ...((level !== undefined && level !== 'undefined') && { level: level }),
+            ...((category !== undefined && category !== 'undefined') && { category: category })
+        });
+        console.log({ level })
+        console.log({ category })
+        res.send(videos)
+    }
+    catch (err) {
+        console.error(err)
+    }
+})
 
 app.listen(PORT, () => {
     console.log("Server running on Port:", PORT);
