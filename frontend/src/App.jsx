@@ -8,6 +8,7 @@ import Meditation from './pages/Meditation';
 import Profile from './pages/ProfilPage';
 import LogIn from './components/LogIn';
 import Playlist from './pages/PlaylistDetail'
+import LandingPage from './pages/LandingPage';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path='/profile' element={<Profile />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/login' element={<LogIn />} />
+        <Route path='/' element={<LandingPage />} />
       </Routes>
     </>
   )
