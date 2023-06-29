@@ -114,6 +114,7 @@ app.get('/api/yogavideos/', async (req, res) => {
     }
 });
 
+// api route to get specific video using its id from the db
 app.get('/api/yogavideos/:id', async (req, res) => {
     const { id } = req.params;
     try {
@@ -124,6 +125,19 @@ app.get('/api/yogavideos/:id', async (req, res) => {
         console.error(err)
     }
 });
+
+// get thumbnail using thumbnail
+app.get('/api/thumbnail/:thumbnail', async (req, res) => {
+    const { thumbnail } = req.params;
+    try {
+        const video = await Video.findOne({ thumbnail: thumbnail });
+        // get the thumbnail image using open download stream and pipe it to the frontend as response
+        gridFSBucket.openDownloadStreamByName(video.thumbnail).pipe(res)
+    }
+    catch (err) {
+        console.error(err)
+    }
+})
 
 
 
