@@ -1,0 +1,18 @@
+{
+    "videos": [
+        {
+            "title": "FancyYogaPose",
+            "category": "Stress relief",
+            "level": "Beginner",
+            "filepath": "./videos/yoga-pose-1920x1080-24fps.mp4",
+            "filename": "3327752-1920x1080-24fps.mp4"
+        },
+        {
+            "title": "FancyYogaPose2",
+            "category": "Anxiety relief",
+            "level": "Intermediate",
+            "filepath": "./videos/yoga-pose-3676-1080p.mp4",
+            "filename": "yoga-pose-3676-1080p.mp4"
+        }
+    ]
+}
