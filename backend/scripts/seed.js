@@ -5,6 +5,8 @@ import thumbsupply from 'thumbsupply';
 
 import data from './seed_test_data.json' assert {type: 'json'};
 
+import { Video } from '../model/Video.js'
+
 dotenv.config({ path: new URL('../../.env', import.meta.url).pathanme });
 
 mongoose.connect(process.env.DB_TEST)
@@ -17,4 +19,5 @@ let gridFSBucket = new mongoose.mongo.GridFSBucket(mongoose.connection, {
 });
 
 console.log('Connected to MongoDB');
+
 
