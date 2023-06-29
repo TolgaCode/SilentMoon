@@ -16,7 +16,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
-mongoose.connect(process.env.DB_TEST);
+mongoose.connect(process.env.DB);
 
 // GridFSBucket provides methods for working with files stored in the bucket
 // creating this bucket allows to perfom tasks as retrieving, updating etc. in the MongoDB using GridFS storage system
