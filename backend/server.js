@@ -1,5 +1,6 @@
+import "./config/config.js"
+
 import express from "express";
-import dotenv from "dotenv";
 import cors from "cors";
 import mongoose from "mongoose";
 
@@ -7,8 +8,6 @@ import { Video } from "./model/Video.js"
 import { User } from "./model/User.js";
 import { /*authenticateToken,*/ generateAccessToken } from "./lib/jwt.js";
 import cookieParser from "cookie-parser";
-
-dotenv.config({ path: new URL("../.env", import.meta.url).pathname });
 
 const PORT = process.env.BE_PORT || 3000;
 const app = express();
