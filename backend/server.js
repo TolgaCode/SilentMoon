@@ -10,7 +10,7 @@ import cookieParser from "cookie-parser";
 
 dotenv.config({ path: new URL("../.env", import.meta.url).pathname });
 
-const PORT = process.env.BE_PORT || 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.json());
