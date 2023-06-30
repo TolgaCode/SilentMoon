@@ -1,0 +1,29 @@
+button {
+    background-color: #E28F83;
+    color: #FFFFFF;
+    border: 1px solid #E28F83;
+    border-radius: 38px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 290px;
+    margin: 3% auto;
+    padding: 2%
+}
+
+.welcome_section {
+    background-image: url('../assets/img/yoga_women.jpg');
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-size: 100% auto;
+    justify-content: space-between;
+
+}
+
+.welcome_text {
+    color: #FEFCF8;
+    font-size: 3rem;
+    width: 200px;
+}

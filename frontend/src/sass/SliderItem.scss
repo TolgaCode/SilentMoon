@@ -1,0 +1,19 @@
+.slider_item_container {
+    min-width: 200px;
+    margin: 15px;
+
+}
+
+.slider_img {
+    width: 100%;
+    border-radius: 15px;
+    aspect-ratio: 2.2 / 1.5;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slider_description {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}

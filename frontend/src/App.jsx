@@ -9,14 +9,16 @@ import Profile from './pages/ProfilPage';
 import LogIn from './components/LogIn';
 import Playlist from './pages/PlaylistDetail'
 import LandingPage from './pages/LandingPage';
+import Welcome from './pages/Welcome';
+
 
 
 function App() {
 
   return (
     <>
-      <h1>Silent MooN</h1>
       <Routes>
+        <Route path='/welcome' element={<Welcome />} />
         <Route path='/home' element={<HomeView />} />
         <Route path='/yoga' element={<Yoga />} />
         <Route path='/meditation' element={<Meditation />} />
