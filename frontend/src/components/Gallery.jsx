@@ -9,14 +9,18 @@ import "../sass/Gallery.scss";
 
 const Gallery = () => {
 
+    // setup of states
+
     const [videos, setVideos] = useState([]);
     const [level, setLevel] = useState(undefined);
     const [category, setCategory] = useState(undefined);
 
+    // api call can retrieve all videos or videos specified by asking for level and category 
     useEffect(() => {
         axios.get(import.meta.env.VITE_BE_URL + `/api/yogavideos?level=${level}&category=${category}`)
             .then((res) => setVideos(res.data))
             .catch((err) => console.error(err))
+        // if level or category changes through button click the api call retrieves the new asked for data
     }, [level, category])
 
     console.log(videos)
