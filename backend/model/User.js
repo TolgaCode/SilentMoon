@@ -1,9 +1,5 @@
 import mongoose from "mongoose";
 import crypto from "crypto";
-import dotenv from "dotenv";
-
-dotenv.config({ path: new URL("../../.env", import.meta.url).pathname });
-mongoose.connect(process.env.DB);
 
 const userSchema = new mongoose.Schema({
     name: { type: String, required: true },
