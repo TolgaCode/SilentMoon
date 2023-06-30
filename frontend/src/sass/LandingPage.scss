@@ -1,15 +1,55 @@
-// img {
-//     width: 100vw
-// }
-// * {
-//     margin: 0;
-//     padding: 0;
-//     box-sizing: border-box;
-// }
-
 .handstand {
-    background: url('../assets/img/handstand_border.jpg') center/contain no-repeat;
-    // background-size: contain;
-    // background-repeat: no-repeat;
-    padding-bottom: 100%;
+    background-image: url('../assets/img/handstand_border.jpg');
+    background-repeat: no-repeat;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    background-size: 100% auto;
+    justify-content: space-between;
+
+    .logo {
+        color: #4A503D;
+        font-size: 16px;
+        padding-top: 20px;
+    }
+}
+
+h2 {
+    text-align: center;
+    color: #4A503D;
+    font-size: 30px;
+    padding-bottom: 4%;
+}
+
+p {
+    text-align: center;
+    color: #A1A4B2;
+    font-size: 16px;
+    padding-bottom: 10%;
+}
+
+.button {
+    background-color: #E28F83;
+    color: #FFFFFF;
+    border: 1px solid #E28F83;
+    border-radius: 38px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 320px;
+    margin: 4% auto;
+    padding: 0.5%
+}
+
+.button:hover {
+    cursor: pointer;
+
+    button:hover {
+        cursor: pointer;
+    }
+}
+
+.Link {
+    font-size: 16px;
+    padding-top: 3%;
 }

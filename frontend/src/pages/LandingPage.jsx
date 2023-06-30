@@ -6,11 +6,12 @@ import { Link } from "react-router-dom";
 const LandingPage = () => {
     return (
         <section>
-            {/* <img src={handstand} alt="handstand" /> */}
-            <div className='handstand'></div>
+            <div className='handstand'>
+                <h1 className='logo'>SILENT MOON</h1>
+            </div>
             <h2>We are what we do</h2>
-            <p>Thousands of people are using Silent Moon for meditation and yoga classes.</p>
-            <Link to={"/signup"}><button>SIGN UP</button></Link>
+            <p>Thousands of people are using Silent Moon <br /> for meditation and yoga classes.</p>
+            <Link to={"/signup"} className='button'><button>SIGN UP</button></Link>
             <Link to={"/login"} className="Link">ALREADY HAVE AN ACCOUNT. <span> LOG IN</span></Link>
         </section>
     );
