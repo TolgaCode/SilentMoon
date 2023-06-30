@@ -1,5 +1,5 @@
 // import { useState } from 'react'
-import './App.css'
+import './App.scss'
 import { Routes, Route } from 'react-router-dom';
 import Yoga from './pages/Yoga'
 import HomeView from './pages/HomeView';
