@@ -1,0 +1,29 @@
+.home_item {
+    background-color: aqua;
+    min-width: 200px;
+    max-width: 200px;
+    padding: 60px 10px 20px 15px;
+    border-radius: 15px;
+
+    .home_item_bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .home_item_headline {
+        margin-bottom: 50px;
+    }
+
+    button {
+        width: 70px;
+        border: transparent;
+        border-radius: 20px;
+        font-size: 1rem;
+        background-color: #FAF2DA;
+        color: #4A503D;
+        padding: 10px 10px;
+    }
+}
