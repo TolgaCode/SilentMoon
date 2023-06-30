@@ -15,7 +15,6 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
 
-
 // ========================
 // SignUp
 app.post("/api/signup", async (req, res) => {
@@ -47,7 +46,6 @@ app.post("/api/signup", async (req, res) => {
         return res.status(500).send({ error: { message: "Unknown Server error" } });
     }
 });
-
 
 // ========================
 // LogIn
