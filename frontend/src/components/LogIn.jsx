@@ -16,7 +16,7 @@ const LogIn = () => {
         e.preventDefault()
         console.log(user)
 
-        await axios.post(import.meta.VITE_BE_URL + "/api/login", user)
+        await axios.post(import.meta.env.VITE_BE_URL + "/api/login", user)
             .then((res) => {
                 console.log(res)
                 navigate("/homeview")

@@ -18,7 +18,7 @@ const SignUp = () => {
         e.preventDefault();
         console.log(data);
 
-        await axios.post(import.meta.VITE_BE_URL + "/api/signup", data)
+        await axios.post(import.meta.env.VITE_BE_URL + "/api/signup", data)
             .then((res) => {
                 console.log(res);
                 navigate("/home")
