@@ -1,3 +1,4 @@
+import "../config/config.js"
 import fs from 'fs'
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
@@ -6,8 +7,6 @@ import thumbsupply from 'thumbsupply'
 import data from './seed_test_data.json' assert {type: 'json'};
 import { Video } from '../model/Video.js'
 
-
-dotenv.config({ path: new URL("../../.env", import.meta.url).pathname });
 
 mongoose.connect(process.env.DB)
 
