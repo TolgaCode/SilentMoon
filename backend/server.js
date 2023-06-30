@@ -1,5 +1,6 @@
+import "./config/config.js"
+
 import express from "express";
-import dotenv from "dotenv";
 import cors from "cors";
 import mongoose from "mongoose";
 
@@ -7,8 +8,6 @@ import { Video } from "./model/Video.js"
 import { User } from "./model/User.js";
 import { /*authenticateToken,*/ generateAccessToken } from "./lib/jwt.js";
 import cookieParser from "cookie-parser";
-
-dotenv.config({ path: new URL("../.env", import.meta.url).pathname });
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -100,6 +99,7 @@ app.post("/api/logout", (req, res) => {
 
 // api route to receive all the videos or only the once you filteres using level and category query
 app.get('/api/yogavideos/', async (req, res) => {
+    console.log(process.env.DB)
     let { level, category } = req.query;
 
     // using spread operator along with conditional logic including the level and category criteria 
