@@ -45,7 +45,9 @@ for await (let videoData of data.videos) {
         category: videoData.category,
         filename: videoData.filename,
         filesize: stat.size,
-        thumbnail: thumbnail
+        thumbnail: thumbnail,
+        // not yet available
+        description: videoData.description
     });
 
     await video.save();
