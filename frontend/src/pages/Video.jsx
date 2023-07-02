@@ -24,8 +24,7 @@ const Video = () => {
                 url={import.meta.env.VITE_BE_URL + `/api/videostream/${video.filename}`}
                 controls={true}
             />
-            {/* not yet available */}
-            {/* <p>${video.description}</p> */}
+            <p>${video.description}</p>
         </>
     );
 }
