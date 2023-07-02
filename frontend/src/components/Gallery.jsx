@@ -28,11 +28,12 @@ const Gallery = () => {
     return (
         <section>
             <div>
-                <button onClick={() => { setCategory('anxiety') }}><img src={anxiousIcon} alt="" /></button>
-                <button onClick={() => { setCategory('stress') }}><img src={sleepIcon} alt="" /></button>
-                <button onClick={() => { setLevel('Beginner') }}>Beginner</button>
-                <button onClick={() => { setLevel('Intermediate') }}>Intermediate</button>
-                <button onClick={() => { setLevel('Expert') }}>Expert</button>
+                <button onClick={() => { setCategory('stressrelief') }}><img src={anxiousIcon} alt="" /></button>
+                <button onClick={() => { setCategory('flexability') }}><img src={sleepIcon} alt="" /></button>
+                <button onClick={() => { setCategory('strength') }}><img src={sleepIcon} alt="" /></button>
+                <button onClick={() => { setLevel('beginner') }}>Beginner</button>
+                <button onClick={() => { setLevel('intermediate') }}>Intermediate</button>
+                <button onClick={() => { setLevel('expert') }}>Expert</button>
             </div>
 
             {videos.length > 0 && videos.map((item, i) => {
