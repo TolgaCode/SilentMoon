@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import thumbsupply from 'thumbsupply'
 
-import data from './seed_test_data.json' assert {type: 'json'};
+import data from './seed_data.json' assert {type: 'json'};
 import { Video } from '../model/Video.js'
 
 
@@ -46,7 +46,6 @@ for await (let videoData of data.videos) {
         filename: videoData.filename,
         filesize: stat.size,
         thumbnail: thumbnail,
-        // not yet available
         description: videoData.description
     });
 
