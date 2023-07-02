@@ -1,7 +1,6 @@
 import "../config/config.js"
 import fs from 'fs'
 import mongoose from 'mongoose';
-import dotenv from 'dotenv';
 import thumbsupply from 'thumbsupply'
 
 import data from './seed_data.json' assert {type: 'json'};
