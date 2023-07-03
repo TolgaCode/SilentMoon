@@ -1,4 +1,5 @@
-// import { useState } from 'react'
+import { useContext } from "react";
+import { UserContext } from "./contexts/UserContext";
 import './App.scss'
 import { Routes, Route } from 'react-router-dom';
 import Yoga from './pages/Yoga'
@@ -11,25 +12,28 @@ import Playlist from './pages/PlaylistDetail'
 import LandingPage from './pages/LandingPage';
 import Welcome from './pages/Welcome';
 import Video from './pages/Video';
+import ProtectedRoute from './components/ProtectedRoute';
 
 
 
 function App() {
-
+  const { user } = useContext(UserContext);
   return (
     <>
       <Routes>
-        <Route path='/welcome' element={<Welcome />} />
-        <Route path='/home' element={<HomeView />} />
-        <Route path='/yoga' element={<Yoga />} />
-        <Route path='/meditation' element={<Meditation />} />
-        <Route path='/music' element={<Playlist />} />
-        <Route path='/profile' element={<Profile />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/login' element={<LogIn />} />
-        <Route path='/video/:id' element={<Video />} />
         <Route path='/' element={<LandingPage />} />
-      </Routes>
+        <Route element={<ProtectedRoute user={user} />}>
+          <Route path='/yoga' element={<Yoga />} />
+          <Route path='/meditation' element={<Meditation />} />
+          <Route path='/music' element={<Playlist />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/video/:id' element={<Video />} />
+          <Route path='/welcome' element={<Welcome />} />
+          <Route path='/home' element={<HomeView />} />
+        </Route>
+      </Routes >
     </>
   )
 }
