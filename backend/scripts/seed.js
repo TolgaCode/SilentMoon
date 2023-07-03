@@ -1,13 +1,11 @@
+import "../config/config.js"
 import fs from 'fs'
 import mongoose from 'mongoose';
-import dotenv from 'dotenv';
 import thumbsupply from 'thumbsupply'
 
-import data from './seed_test_data.json' assert {type: 'json'};
+import data from './seed_data.json' assert {type: 'json'};
 import { Video } from '../model/Video.js'
 
-
-dotenv.config({ path: new URL("../../.env", import.meta.url).pathname });
 
 mongoose.connect(process.env.DB)
 
@@ -46,7 +44,8 @@ for await (let videoData of data.videos) {
         category: videoData.category,
         filename: videoData.filename,
         filesize: stat.size,
-        thumbnail: thumbnail
+        thumbnail: thumbnail,
+        description: videoData.description
     });
 
     await video.save();
