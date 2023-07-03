@@ -17,8 +17,8 @@ export default function LogIn() {
         e.preventDefault();
         setError("");
         try {
-            await axios.post(import.meta.env.VITE_BE_URL + "/api/login", user);
-            nav("/home");
+            await axios.post(import.meta.env.VITE_BE_URL + "/api/login", user, { withCredentials: true })
+            nav("/home")
         } catch (error) {
             const responseError = error?.response?.data?.error?.message;
             if (responseError) {
