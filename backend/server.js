@@ -12,9 +12,14 @@ import cookieParser from "cookie-parser";
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(express.json());
+app.use(cors(
+    {
+        origin: true,
+        credentials: true
+    }
+));
 mongoose.connect(process.env.DB);
 
 // GridFSBucket provides methods for working with files stored in the bucket
@@ -84,7 +89,7 @@ app.post("/api/login", async (req, res) => {
 
 // ========================
 // LogOut
-app.post("/api/logout", (req, res) => {
+app.get("/api/logout", (req, res) => {
     res.clearCookie("auth");
     res.send("Logged out successfully")
 })
@@ -99,9 +104,10 @@ app.get("/api/verified", authenticateToken, async (req, res) => {
 
 
 // api route to receive all the videos or only the once you filteres using level and category query
-app.get('/api/yogavideos/', async (req, res) => {
-    console.log(process.env.DB)
-    let { level, category } = req.query;
+app.get('/api/yogavideos/', authenticateToken, async (req, res) => {
+    let { level, category, favVideos } = req.query;
+
+    const user = await User.findOne({ email: req.userEmail });
 
     // using spread operator along with conditional logic including the level and category criteria 
     // if the condition is true the level/category property and corresponding value is added to the query
@@ -110,10 +116,12 @@ app.get('/api/yogavideos/', async (req, res) => {
             // using object spreader to conditionally include the level property when the condition is met, otherwise the resulting object will be empty
             // only filter for level, if level is not undefined or 'undefined
             ...((level !== undefined && level !== 'undefined') && { level: level }),
-            ...((category !== undefined && category !== 'undefined') && { category: category })
+            ...((category !== undefined && category !== 'undefined') && { category: category }),
+            ...((favVideos !== undefined && favVideos !== 'undefined') && { _id: { $in: user.favVideos } })
+
         });
-        console.log({ level })
-        console.log({ category })
+        // console.log({ level })
+        // console.log({ category })
         res.send(videos)
     }
     catch (err) {
@@ -122,18 +130,11 @@ app.get('/api/yogavideos/', async (req, res) => {
 });
 
 // api route to get specific video using its id from the db
-// app.get('/api/yogavideos/:id', authenticateToken, async (req, res) => {
-app.get('/api/yogavideos/:id', async (req, res) => {
+app.get('/api/yogavideos/:id', authenticateToken, async (req, res) => {
     const { id } = req.params;
     try {
 
         const video = await Video.findOne({ _id: id });
-        //get user req.userEmail
-        const user = await User.findOne({ email: req.userEmail })
-        //check if video is included in user.favVids
-        video.isFav = user.favVideos.includes(id)
-        //attatch ifo to video
-        //video.isFavourite = true/false
         res.send(video)
     }
     catch (err) {
@@ -206,8 +207,22 @@ app.get('/api/videostream/:filename', async (req, res) => {
 })
 
 
-app.put('/api/favouriseVideo/:id', async (req, res) => {
-    // know user you awnt to update 
+app.put('/api/favouriseVideo/:id', authenticateToken, async (req, res) => {
+    const { id } = req.params;
+    try {
+        let user = await User.findOne({ email: req.userEmail });
+        if (user.favVideos.includes(id)) {
+            await User.updateOne({ _id: user._id }, { $pull: { favVideos: id } })
+        }
+        else {
+            await User.updateOne({ _id: user._id }, { $push: { favVideos: id } })
+        }
+        user = await User.findOne({ email: req.userEmail });
+        res.send(user)
+    }
+    catch (err) {
+        console.error(err)
+    }
 
 })
 
