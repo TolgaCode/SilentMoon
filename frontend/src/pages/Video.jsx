@@ -13,6 +13,7 @@ const Video = () => {
     // api calls specific id and receives corresponding videofile
     useEffect(() => {
         axios.get(import.meta.env.VITE_BE_URL + `/api/yogavideos/${id}`)
+            // axios.get(import.meta.env.VITE_BE_URL + `/api/yogavideos/${id}`, { withCredentials: true })
             .then((res) => setVideo(res.data))
             .catch((err) => console.error(err))
     }, [])
