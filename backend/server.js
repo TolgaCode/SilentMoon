@@ -196,6 +196,10 @@ app.get('/api/videostream/:filename', async (req, res) => {
     }
 })
 
+app.put('/api/favouriseVideo/:id', async (req, res) => {
+
+})
+
 app.listen(PORT, () => {
     console.log("Server running on Port:", PORT);
 });
