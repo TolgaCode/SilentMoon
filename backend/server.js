@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 
 import { Video } from "./model/Video.js"
 import { User } from "./model/User.js";
-import { /*authenticateToken,*/ generateAccessToken } from "./lib/jwt.js";
+import { authenticateToken, generateAccessToken } from "./lib/jwt.js";
 import cookieParser from "cookie-parser";
 
 const PORT = process.env.PORT || 3000;
@@ -121,10 +121,18 @@ app.get('/api/yogavideos/', async (req, res) => {
 });
 
 // api route to get specific video using its id from the db
+// app.get('/api/yogavideos/:id', authenticateToken, async (req, res) => {
 app.get('/api/yogavideos/:id', async (req, res) => {
     const { id } = req.params;
     try {
+
         const video = await Video.findOne({ _id: id });
+        //get user req.userEmail
+        const user = await User.findOne({ email: req.userEmail })
+        //check if video is included in user.favVids
+        video.isFav = user.favVideos.includes(id)
+        //attatch ifo to video
+        //video.isFavourite = true/false
         res.send(video)
     }
     catch (err) {
@@ -194,6 +202,12 @@ app.get('/api/videostream/:filename', async (req, res) => {
             console.error(err)
         }
     }
+})
+
+
+app.put('/api/favouriseVideo/:id', async (req, res) => {
+    // know user you awnt to update 
+
 })
 
 app.listen(PORT, () => {

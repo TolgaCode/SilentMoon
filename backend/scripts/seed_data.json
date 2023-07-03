@@ -1,0 +1,108 @@
+{
+    "videos": [
+        {
+            "title": "head to knee",
+            "category": "flexability",
+            "level": "beginner",
+            "filepath": "./videos/the-head-to-knee-yoga-pose-3676-1080p.mp4",
+            "filename": "the-head-to-knee-yoga-pose-3676-1080p.mp4",
+            "description": "Seated forward bend, stretches legs, spine, hips, promotes flexibility, relaxation, and mental calmness."
+        },
+        {
+            "title": "deep breathing",
+            "category": "stressrelief",
+            "level": "beginner",
+            "filepath": "./videos/deep-breathing-yoga-pose-8335-1080p.mp4",
+            "filename": "deep-breathing-yoga-pose-8335-1080p.mp4",
+            "description": "Deep Breathing Meditation: Focus on breath, inhale deeply, exhale slowly, promotes relaxation, clarity, and mindfulness."
+        },
+        {
+            "title": "downward facing",
+            "category": "strength",
+            "level": "intermediate",
+            "filepath": "./videos/the-downward-facing-dog-yoga-pose-266-1080p.mp4",
+            "filename": "the-downward-facing-dog-yoga-pose-266-1080p.mp4",
+            "description": " Inverted V-shaped pose, strengthens upper body, stretches hamstrings, calves, and spine."
+        },
+        {
+            "title": "arms to heaven",
+            "category": "stressrelief",
+            "level": "intermediate",
+            "filepath": "./videos/the-arms-to-heaven-yoga-pose.mp4",
+            "filename": "the-arms-to-heaven-yoga-pose.mp4",
+            "description": "Arms gracefully raised, legs and arms move in contrasting directions with fluidity."
+        },
+        {
+            "title": "eight angle",
+            "category": "strength",
+            "level": "expert",
+            "filepath": "./videos/eight-angle-yoga-pose-4278-1080p.mp4",
+            "filename": "eight-angle-yoga-pose-4278-1080p.mp4",
+            "description": "Arm balances, legs crossed, core engaged, twists, builds strength and balance. Enhances body awareness and coordination."
+        },
+        {
+            "title": "kapotasana",
+            "category": "flexability",
+            "level": "intermediate",
+            "filepath": "./videos/the-kapotasana-yoga-pose-3255-1080p.mp4",
+            "filename": "the-kapotasana-yoga-pose-3255-1080p.mp4",
+            "description": "Hips square, one leg forward, other leg extended back, deep hip opening stretch. Calms the mind and reduces stress and anxiety."
+        },
+        {
+            "title": "foot to knee",
+            "category": "stressrelief",
+            "level": "beginner",
+            "filepath": "./videos/the-foot-to-knee-yoga-pose.mp4",
+            "filename": "the-foot-to-knee-yoga-pose.mp4",
+            "description": "Arms reach overhead, fold forward, stretches hamstrings, lengthens spine, promotes relaxation."
+        },
+        {
+            "title": "mountain toe",
+            "category": "flexability",
+            "level": "expert",
+            "filepath": "./videos/the-mountain-toe-stand-yoga-pose-6301-1080p.mp4",
+            "filename": "the-mountain-toe-stand-yoga-pose-6301-1080p.mp4",
+            "description": "Sitting pose, legs extended, reach for toes, stretches hamstrings, toes, and calves. Focusing on the breath and body during the pose enhances mindfulness and body awareness."
+        },
+        {
+            "title": "sirsasana",
+            "category": "strength",
+            "level": "intermediate",
+            "filepath": "./videos/the-sirsasana-yoga-pose-5703-1080p.mp4",
+            "filename": "the-sirsasana-yoga-pose-5703-1080p.mp4",
+            "description": "Inverted pose, balancing on the head, improves circulation, builds strength, and enhances focus and mental clarity."
+        },
+        {
+            "title": "crane",
+            "category": "strength",
+            "level": "expert",
+            "filepath": "./videos/the-crane-yoga-pose-2197-1080p.mp4",
+            "filename": "the-crane-yoga-pose-2197-1080p.mp4",
+            "description": "Arm balance, palms support body, strengthens arms and core, improves focus and balance."
+        },
+        {
+            "title": "forward stretch",
+            "category": "stressrelief",
+            "level": "intermediate",
+            "filepath": "./videos/the-forward-stretch-yoga-pose.mp4",
+            "filename": "the-forward-stretch-yoga-pose.mp4",
+            "description": "Standing balance pose, one leg lifted, torso parallel to the ground, strengthens legs and core, improves balance and stability."
+        },
+        {
+            "title": "warrior 1",
+            "category": "flexability",
+            "level": "beginner",
+            "filepath": "./videos/the-warrior-i-yoga-pose-on-the-lawn-7972-1080p.mp4",
+            "filename": "the-warrior-i-yoga-pose-on-the-lawn-7972-1080p.mp4",
+            "description": "Standing pose, front knee bent, back leg extended, arms lifted, strengthens legs and core, improves posture."
+        },
+        {
+            "title": "waving",
+            "category": "strength",
+            "level": "intermediate",
+            "filepath": "./videos/the-waving-yoga-pose.mp4",
+            "filename": "the-waving-yoga-pose.mp4",
+            "description": "Dynamic movement, flowing spine from flexion to extension, improves spinal mobility and flexibility."
+        }
+    ]
+}

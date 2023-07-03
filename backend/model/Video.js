@@ -6,7 +6,8 @@ const videoSchema = new Schema({
     category: String,
     filename: String,
     filesize: Number,
-    thumbnail: String
+    thumbnail: String,
+    description: String
 });
 
 export const Video = model('Video', videoSchema)

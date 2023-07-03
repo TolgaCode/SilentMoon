@@ -10,6 +10,7 @@ import LogIn from './components/LogIn';
 import Playlist from './pages/PlaylistDetail'
 import LandingPage from './pages/LandingPage';
 import Welcome from './pages/Welcome';
+import Video from './pages/Video';
 
 
 
@@ -26,6 +27,7 @@ function App() {
         <Route path='/profile' element={<Profile />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/login' element={<LogIn />} />
+        <Route path='/video/:id' element={<Video />} />
         <Route path='/' element={<LandingPage />} />
       </Routes>
     </>
