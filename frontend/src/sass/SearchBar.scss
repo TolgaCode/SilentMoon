@@ -1,9 +1,22 @@
 @import "../App.scss";
 
+.search-container {
+    margin: 20px 0;
+}
+
 .searchInput {
-    background-color: rgba(211, 211, 211, 0.283);
-    border: 0;
-    padding: 7px;
-    width: 300px;
-    border-radius: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 0.5em;
+    font-size: 1.2em;
+    transition: width 0.5s ease-in-out;
+    background: url('../assets/img/search.svg') no-repeat right;
+    background-color: rgba(161, 164, 178, 0.2);
+    padding: 10px;
+
+
+    :focus {
+        font-size: 1.5em;
+        width: 50%;
+    }
 }

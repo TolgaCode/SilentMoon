@@ -22,7 +22,7 @@ const Gallery = () => {
         axios
             .get(
                 import.meta.env.VITE_BE_URL +
-                `/api/yogavideos?level=${level}&category=${category}&description=${description}`
+                `/api/yogavideos?level=${level}&category=${category}&favVideos=${favVideos}&description=${description}`, { withCredentials: true }
             )
             .then((res) => {
                 // Filtere die Videos basierend auf dem Suchbegriff und Level
@@ -41,7 +41,7 @@ const Gallery = () => {
 
     // api call can retrieve all videos or videos specified by asking for level and category 
     useEffect(() => {
-        axios.get(import.meta.env.VITE_BE_URL + `/api/yogavideos?level=${level}&category=${category}&favVideos=${favVideos}`, { withCredentials: true })
+        axios.get(import.meta.env.VITE_BE_URL + `/api/yogavideos?level=${level}&category=${category}&favVideos=${favVideos}&description=${description}`, { withCredentials: true })
             .then((res) => setVideos(res.data))
             .catch((err) => console.error(err))
         // if level or category changes through button click the api call retrieves the new asked for data
@@ -78,10 +78,15 @@ const Gallery = () => {
     return (
         <section>
             <div>
-
-                <Searchbar onSearch={handleSearch} value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    placeholder="Schlagwörter eingeben" />
+                <Searchbar
+                    onSearch={handleSearch}
+                    value={searchTerm}
+                    onChange={(e) => {
+                        setSearchTerm(e.target.value);
+                        handleSearch(); // Filterung bei Eingabe auslösen
+                    }}
+                    placeholder="Schlagwörter eingeben"
+                />
                 <button onClick={() => { handleCategory('stressrelief') }}><img src={anxiousIcon} alt="" /></button>
                 <button onClick={() => { handleCategory('flexability') }}><img src={sleepIcon} alt="" /></button>
                 <button onClick={() => { handleCategory('strength') }}><img src={sleepIcon} alt="" /></button>
@@ -109,7 +114,9 @@ const Gallery = () => {
         </section>
     );
 }
-
+{/* <Searchbar onSearch={handleSearch} value={searchTerm}
+onChange={(e) => setSearchTerm(e.target.value)}
+placeholder="Schlagwörter eingeben" /> */}
 
 export default Gallery;
 
