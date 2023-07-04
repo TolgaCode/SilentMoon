@@ -6,20 +6,21 @@ export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
     const navigate = useNavigate();
-    const [user, setUser] = useState({ name: "Montag" });
+    const [user, setUser] = useState({});
     useEffect(() => {
         axios
-            .get(import.meta.env.VITE_BE_URL + "/api/verified")
+            .get(import.meta.env.VITE_BE_URL + "/api/verified", { withCredentials: true })
             .then((resp) => setUser(resp.data))
             .catch((e) => {
                 // ----?----
-                console.log(e);
+                //navigate('/login')
+                // console.log(e);
                 // ----?----
             });
     }, [navigate])
 
     const logout = async () => {
-        await axios.get("/api/logout");
+        await axios.get(import.meta.env.VITE_BE_URL + "/api/logout", { withCredentials: true })
         setUser({});
         navigate("/");
     };
@@ -27,11 +28,12 @@ export const UserProvider = ({ children }) => {
     return (
         <UserContext.Provider
             value={{
-                user
+                user,
+                setUser,
                 // name: "TestContext",
                 // surname: "TestSurname",
                 // email: "Test@context.de"
-                // logout
+                logout
             }}
         >
             {children}
