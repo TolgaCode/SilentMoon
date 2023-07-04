@@ -10,16 +10,16 @@ const ProfilPage = () => {
     console.log(user);
 
 
-    useEffect(() => {
-        axios.get("/api/verified", { withCredentials: true })
-            .then((res) => {
-                console.log(res);
-                setUser(res.data);
-            })
-            .catch((err) => {
-                console.error(err);
-            });
-    }, []);
+    // useEffect(() => {
+    //     axios.get("/api/verified", { withCredentials: true })
+    //         .then((res) => {
+    //             console.log(res);
+    //             setUser(res.data);
+    //         })
+    //         .catch((err) => {
+    //             console.error(err);
+    //         });
+    // }, []);
 
 
     return (

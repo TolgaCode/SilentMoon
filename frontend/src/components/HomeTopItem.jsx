@@ -9,7 +9,7 @@ const HomeTopItem = () => {
             <div className='home_item_bottom'>
                 <p>3-10 MIN</p>
                 <Link to={`/login`}>
-                    <button>START</button>
+                    <button className='home_topItem_btn' >START</button>
                 </Link>
             </div>
 

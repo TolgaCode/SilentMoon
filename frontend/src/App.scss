@@ -85,8 +85,8 @@ a {
   text-align: center;
   border: 1px solid $peach;
   border-radius: 38px;
-  width: 80%;
-  padding: 2%;
+  width: 23rem;
+  padding: 4%;
   margin: 3% auto
 }
 
@@ -96,8 +96,8 @@ a {
   text-align: center;
   border: 1px solid $peach;
   border-radius: 38px;
-  width: 80%;
-  padding: 2%;
+  width: 23rem;
+  padding: 4%;
   margin: 3% auto;
 }
 
@@ -117,4 +117,18 @@ a {
   color: $darkGreen;
   letter-spacing: 0.25rem;
   text-align: center;
+}
+
+.hdl-medium-green {
+  font-family: $sansP900;
+  font-size: 2.4rem;
+  color: $darkGreen;
+  letter-spacing: 0.2rem;
+}
+
+.description_medium_lightgray {
+  font-family: $sansP600;
+  font-size: 1.6rem;
+  color: $lightGray;
+  letter-spacing: 0.1rem;
 }

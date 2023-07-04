@@ -46,7 +46,7 @@ const Navbar = () => {
                         key={route}
                         to={route}
                         className={`linkscontainer ${activeRoute[route].isActive ? 'active' : ''}`}
-                        activeClassName="active"
+                        activeclassname="active"
                     >   <div className='iconcontainer'>
                             <img alt="moon icon" src={activeRoute[route].isActive ? activeRoute[route].activeIcon : activeRoute[route].icon} className="hovericon" />
                         </div>
