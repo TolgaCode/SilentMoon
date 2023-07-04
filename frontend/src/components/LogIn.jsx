@@ -18,7 +18,11 @@ export default function LogIn() {
         setError("");
         try {
             await axios.post(import.meta.env.VITE_BE_URL + "/api/login", user, { withCredentials: true })
-            nav("/home")
+                .then((res) => {
+                    setUser(res.data);
+                    nav("/home")
+                })
+
         } catch (error) {
             const responseError = error?.response?.data?.error?.message;
             if (responseError) {
@@ -39,44 +43,8 @@ export default function LogIn() {
                 <button className="bigBtn-red">LOGIN</button>
             </form>
             <Link to={"/signup"} className="Link">DON`T HAVE AN ACCOUNT YET? <span> SIGN UP</span></Link>
+            <Link to={"/home"} className="Link">HOME</Link>
 
-        </section>
+        </section >
     );
 }
-
-
-
-//     const [user, setUser] = useState({
-//         email: "",
-//         password: ""
-//     })
-
-//     const loginHandler = async (e) => {
-//         e.preventDefault()
-//         console.log(user)
-
-//         await axios.post(import.meta.env.VITE_BE_URL + "/api/login", user)
-//             .then((res) => {
-//                 console.log(res)
-//                 nav("/home")
-//             }).catch((err) => {
-//                 console.error(err)
-//             })
-//     }
-
-//     return (
-//         <section>
-//             <h1>Welcome Back!</h1>
-//             <form onSubmit={loginHandler}>
-//                 <input type="email" id="email" placeholder="EMAIL" value={user.email} onChange={(e) => { setUser({ ...user, email: e.target.value }) }}></input>
-//                 <input type="password" id="password" placeholder="PASSWORD" value={user.password} onChange={(e) => { setUser({ ...user, password: e.target.value }) }}></input>
-
-//                 <button>LOGIN</button>
-//             </form>
-//             <Link to={"/signup"} className="Link">DON`T HAVE AN ACCOUNT YET? <span> SIGN UP</span></Link>
-
-//         </section>
-//     );
-// }
-
-// export default LogIn;
