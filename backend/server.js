@@ -40,10 +40,11 @@ app.post("/api/signup", async (req, res) => {
     // User speichern
     try {
         await newUser.save();
+        const token = generateAccessToken({ email });
+        res.cookie("auth", token, { httpOnly: true, maxAge: 1000 * 60 * 30 });
         return res.send({
             data: {
-                message: "New User created",
-                user: { name, surname, email },
+                newUser
             },
         });
     } catch (e) {
@@ -78,7 +79,7 @@ app.post("/api/login", async (req, res) => {
     if (isVerified) {
         const token = generateAccessToken({ email });
         res.cookie("auth", token, { httpOnly: true, maxAge: 1000 * 60 * 30 });
-        return res.send({ data: { token } });
+        return res.send({ data: { token }, user });
     }
 
     res
@@ -89,7 +90,7 @@ app.post("/api/login", async (req, res) => {
 
 // ========================
 // LogOut
-app.get("/api/logout", (req, res) => {
+app.get("/api/logout", async (req, res) => {
     res.clearCookie("auth");
     res.send("Logged out successfully")
 })
