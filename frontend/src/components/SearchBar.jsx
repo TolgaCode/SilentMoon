@@ -1,26 +1,27 @@
 import { useState } from "react";
 import '../sass/SearchBar.scss'
-const Searchbar = ({ onSearch }) => {
 
+const Searchbar = ({ onSearch }) => {
     const [searchTerm, setSearchTerm] = useState("");
 
-    const handleSearch = () => {
-        console.log("klick")
-        onSearch(searchTerm);
-        setSearchTerm("");
+    const handleSearch = (e) => {
+        const value = e.target.value;
+        setSearchTerm(value);
+        onSearch(value);
     };
 
     return (
-        <div>
+        <div className="search-container">
             <input
                 type="text"
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={handleSearch}
                 placeholder="Schlagwörter eingeben"
-                className="searchInput" />
-            <button onClick={handleSearch}>Suchen</button>
+                className="searchInput"
+            />
         </div>
     );
-}
+};
 
 export default Searchbar;
+
