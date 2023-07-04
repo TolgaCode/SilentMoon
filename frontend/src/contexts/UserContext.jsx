@@ -6,7 +6,7 @@ export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
     const navigate = useNavigate();
-    const [user, setUser] = useState({ name: "Montag" });
+    const [user, setUser] = useState({});
     useEffect(() => {
         axios
             .get(import.meta.env.VITE_BE_URL + "/api/verified")
@@ -18,11 +18,11 @@ export const UserProvider = ({ children }) => {
             });
     }, [navigate])
 
-    const logout = async () => {
-        await axios.get("/api/logout");
-        setUser({});
-        navigate("/");
-    };
+    // const logout = async () => {
+    //     await axios.get("/api/logout");
+    //     setUser({});
+    //     navigate("/");
+    // };
 
     return (
         <UserContext.Provider
