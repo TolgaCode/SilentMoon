@@ -8,8 +8,7 @@ export const UserProvider = ({ children }) => {
     const navigate = useNavigate();
     const [user, setUser] = useState({});
     useEffect(() => {
-        axios
-            .get(import.meta.env.VITE_BE_URL + "/api/verified", { withCredentials: true })
+        axios.get(import.meta.env.VITE_BE_URL + "/api/verified", { withCredentials: true })
             .then((resp) => setUser(resp.data))
             .catch((e) => {
                 // ----?----
@@ -21,8 +20,10 @@ export const UserProvider = ({ children }) => {
 
     const logout = async () => {
         await axios.get(import.meta.env.VITE_BE_URL + "/api/logout", { withCredentials: true })
-        setUser({});
-        navigate("/");
+            .then((res) => {
+                setUser({});
+                navigate("/")
+            })
     };
 
 

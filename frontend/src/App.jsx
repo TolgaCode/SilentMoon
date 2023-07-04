@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { UserContext } from "./contexts/UserContext";
 import './App.scss'
 import { Routes, Route } from 'react-router-dom';
 import Yoga from './pages/Yoga'
@@ -15,16 +13,14 @@ import Video from './pages/Video';
 import ProtectedRoute from './components/ProtectedRoute';
 
 
-
 function App() {
-  const { user } = useContext(UserContext);
   return (
     <>
       <Routes>
         <Route path='/signup' element={<SignUp />} />
         <Route path='/login' element={<LogIn />} />
         <Route path='/' element={<LandingPage />} />
-        <Route element={<ProtectedRoute user={user} />}>
+        <Route element={<ProtectedRoute />}>
           <Route path='/yoga' element={<Yoga />} />
           <Route path='/meditation' element={<Meditation />} />
           <Route path='/music' element={<Playlist />} />
