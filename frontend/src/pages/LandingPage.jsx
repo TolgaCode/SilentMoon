@@ -6,7 +6,7 @@ const LandingPage = () => {
     return (
         <section>
             <div className='handstand'>
-                <h1 className='logo'>SILENT MOON</h1>
+                <h1 className='logoDark'>SILENT MOON</h1>
             </div>
             <h2>We are what we do</h2>
             <p>Thousands of people are using Silent Moon <br /> for meditation and yoga classes.</p>

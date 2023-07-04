@@ -1,5 +1,6 @@
 import Gallery from '../components/Gallery';
 import Navbar from '../components/Navbar'
+// import Searchbar from '../components/SearchBar';
 
 const Yoga = () => {
 
@@ -7,6 +8,7 @@ const Yoga = () => {
     return (
         <>
             <h1>Yoga</h1>
+
             <Gallery />
             <Navbar />
         </>

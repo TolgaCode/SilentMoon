@@ -7,7 +7,7 @@ const LogOut = () => {
 
     const logoutHandler = async () => {
         try {
-            await axios.post(import.meta.VITE_BE_URL + "/api/logout");
+            await axios.post(import.meta.env.VITE_BE_URL + "/api/logout");
             navigate("/")
         } catch (err) {
             console.error(err)

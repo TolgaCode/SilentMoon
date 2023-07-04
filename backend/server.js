@@ -90,12 +90,13 @@ app.post("/api/logout", (req, res) => {
 })
 
 
-// _________________
-// app.get("/api/verified", authenticateToken, async (req, res) => {
-//     const user = await User.findOne({ email: req.userEmail });
-//     res.send(user);
-// });
-// _________________
+// ========================
+// Verified
+app.get("/api/verified", authenticateToken, async (req, res) => {
+    const user = await User.findOne({ email: req.userEmail });
+    res.send(user);
+});
+
 
 // api route to receive all the videos or only the once you filteres using level and category query
 app.get('/api/yogavideos/', async (req, res) => {
