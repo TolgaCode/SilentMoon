@@ -60,21 +60,19 @@ export default function SignUp() {
 
 
     return (
-        <section>
-            <h1>Create your Account</h1>
+        <section className="signUp-container">
+            <h1 className="hdl-big-green-center" >Create your Account</h1>
             <form onSubmit={handleSubmit}>
-                <input type="text" id="name" placeholder="NAME" value={data.name} onChange={(e) => { setData({ ...data, name: e.currentTarget.value }) }} />
-                <input type="text" id="surname" placeholder="SURNAME" value={data.surname} onChange={(e) => { setData({ ...data, surname: e.currentTarget.value }) }} />
-                <input type="email" id="email" placeholder="EMAIL" value={data.email} onChange={(e) => { setData({ ...data, email: e.currentTarget.value }) }} />
-                <input type="password" id="password" placeholder="PASSWORD" value={data.password} onChange={(e) => { setData({ ...data, password: e.currentTarget.value }) }} />
+                <input className="input" type="text" id="name" placeholder="NAME" value={data.name} onChange={(e) => { setData({ ...data, name: e.currentTarget.value }) }} />
+                <input className="input" type="text" id="surname" placeholder="SURNAME" value={data.surname} onChange={(e) => { setData({ ...data, surname: e.currentTarget.value }) }} />
+                <input className="input" type="email" id="email" placeholder="EMAIL" value={data.email} onChange={(e) => { setData({ ...data, email: e.currentTarget.value }) }} />
+                <input className="input" type="password" id="password" placeholder="PASSWORD" value={data.password} onChange={(e) => { setData({ ...data, password: e.currentTarget.value }) }} />
 
-                <button>REGISTER</button>
+                <button className="bigBtn-red">REGISTER</button>
             </form>
-            <Link to={"/login"} className="Link">You are already a User. <span> Click here</span></Link>
+            <Link to={"/login"} className="Link">YOU ARE ALREADY A USER. <span> CLICK HERE</span></Link>
         </section>
     );
-
-
 }
 
 
