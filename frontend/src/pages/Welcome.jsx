@@ -1,4 +1,5 @@
 import '../sass/Welcome.scss'
+import Navbar from '../components/Navbar'
 
 const Welcome = () => {
     return (
@@ -8,7 +9,9 @@ const Welcome = () => {
                 <h2 className='welcome_text'>Hi Name, welcome to Silent Moon</h2>
             </article>
             <button className='bigBtn-red'>GET STARTED</button>
+            <Navbar />
         </section>
+
     );
 }
 
