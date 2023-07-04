@@ -25,6 +25,7 @@ $darkGreen: #4A503D;
 $lightGray: #A1A4B2;
 $beige: #FAF2DA;
 $white: #FEFCF8;
+$peach: #E28F83;
 
 
 //--------------FONTS--------------
@@ -42,12 +43,19 @@ $sansP400: 'SourceSansProRegular';
   box-sizing: border-box;
 }
 
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
 .logoDark {
   color: $darkGreen;
   font-size: 1.5rem;
   font-family: $sansP600;
   letter-spacing: 3px;
   word-spacing: 0.5rem;
+  text-align: center;
+  padding-top: 2.2rem;
 }
 
 .logoLight {
@@ -56,10 +64,57 @@ $sansP400: 'SourceSansProRegular';
   font-family: $sansP600;
   letter-spacing: 3px;
   word-spacing: 0.5rem;
+  text-align: center;
+  padding-top: 2.2rem;
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  // font-weight: 500;
+  // color: #646cff;
+  // text-decoration: inherit;
+  text-decoration: none;
+}
+
+//--------------BUTTONS--------------
+
+.bigBtn-red {
+  background-color: $peach;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid $peach;
+  border-radius: 38px;
+  width: 80%;
+  padding: 2%;
+  margin: 3% auto
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid $peach;
+  border-radius: 38px;
+  width: 80%;
+  padding: 2%;
+  margin: 3% auto;
+}
+
+//--------------HEADLINES--------------
+
+.hdl-big-green-left {
+  font-family: $sansP900;
+  font-size: 2.4rem;
+  color: $darkGreen;
+  letter-spacing: 0.25rem;
+  text-align: left;
+}
+
+.hdl-big-green-center {
+  font-family: $sansP900;
+  font-size: 2.4rem;
+  color: $darkGreen;
+  letter-spacing: 0.25rem;
+  text-align: center;
 }

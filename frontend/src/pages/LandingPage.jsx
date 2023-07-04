@@ -8,10 +8,10 @@ const LandingPage = () => {
             <div className='handstand'>
                 <h1 className='logoDark'>SILENT MOON</h1>
             </div>
-            <h2>We are what we do</h2>
-            <p>Thousands of people are using Silent Moon <br /> for meditation and yoga classes.</p>
-            <Link to={"/signup"} className='button'><button>SIGN UP</button></Link>
-            <Link to={"/login"} className="Link">ALREADY HAVE AN ACCOUNT. <span> LOG IN</span></Link>
+            <h2 className='intro-Hdl'>We are what we do</h2>
+            <p className='intro-Text'>Thousand of people are using silent moon <br /> for meditation and yoga classes.</p>
+            <Link to={"/signup"} className="intro-Btn-Link" ><button className='bigBtn-red'>SIGN UP</button></Link>
+            <Link to={"/login"} className="intro-Link">ALREADY HAVE AN ACCOUNT? <span> LOG IN</span></Link>
         </section>
     );
 }

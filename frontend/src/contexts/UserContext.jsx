@@ -25,6 +25,7 @@ export const UserProvider = ({ children }) => {
         navigate("/");
     };
 
+
     return (
         <UserContext.Provider
             value={{

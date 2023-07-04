@@ -1,34 +1,35 @@
 .handstand {
     background-image: url('../assets/img/handstand_border.jpg');
     background-repeat: no-repeat;
-    height: 60vh;
+    // background-size: cover;
+    width: 100vw;
+    // height: 60vh;
     display: flex;
     flex-direction: column;
     background-size: 100% auto;
-    justify-content: space-between;
-
-    //     .logo {
-    //         color: #4A503D;
-    //         font-size: 16px;
-    //         padding-top: 20px;
-    //     }
+    padding-bottom: 65vh;
 }
 
-h2 {
+.intro-Hdl {
     text-align: center;
     color: #4A503D;
-    font-size: 30px;
-    padding-bottom: 4%;
+    font-size: 3rem;
+    padding-bottom: 0.5rem;
+    margin-top: -2.5rem;
+    font-weight: 600;
 }
 
-p {
+.intro-Text {
     text-align: center;
     color: #A1A4B2;
-    font-size: 16px;
-    padding-bottom: 10%;
+    font-size: 1.6rem;
+    padding-bottom: 1.6rem;
+    line-height: 1.7rem;
+    font-family: 'SourceSansProRegular';
+    font-weight: 500;
 }
 
-.button {
+.intro-bigBtn-red {
     background-color: #E28F83;
     color: #FFFFFF;
     border: 1px solid #E28F83;
@@ -36,12 +37,12 @@ p {
     display: flex;
     justify-content: center;
     text-align: center;
-    width: 320px;
+    width: 80%;
     margin: 4% auto;
-    padding: 0.5%
+    // padding: 0.5%
 }
 
-.button:hover {
+.intro-bigBtn-red:hover {
     cursor: pointer;
 
     button:hover {
@@ -49,7 +50,20 @@ p {
     }
 }
 
-.Link {
-    font-size: 16px;
-    padding-top: 3%;
+.intro-Btn-Link {
+    text-decoration: none;
+}
+
+.intro-Link {
+    font-size: 1.4rem;
+    padding-top: 0.5rem;
+    padding-bottom: 3.5rem;
+    text-decoration: none;
+    color: #A1A4B2;
+    display: flex;
+    justify-content: center;
+
+    span {
+        color: #E28F83
+    }
 }

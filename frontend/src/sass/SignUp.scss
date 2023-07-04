@@ -1,37 +1,38 @@
-section {
+.signUp-container {
     background-color: #FFFFFF;
+    padding-top: 15vh;
 }
 
-h1 {
-    color: #4A503D;
-    text-align: center;
-}
+// .hdl-big-green-center {
+//     color: #4A503D;
+//     text-align: left;
+// }
 
-form {
-    input {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        border: 1px solid #E28F83;
-        border-radius: 38px;
-        width: 290px;
-        margin: 3% auto;
-        padding: 2%
-    }
+// form {
+//     input {
+//         display: flex;
+//         justify-content: center;
+//         text-align: center;
+//         border: 1px solid #E28F83;
+//         border-radius: 38px;
+//         width: 290px;
+//         margin: 3% auto;
+//         padding: 2%
+//     }
 
-    button {
-        background-color: #E28F83;
-        color: #FFFFFF;
-        border: 1px solid #E28F83;
-        border-radius: 38px;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        width: 290px;
-        margin: 3% auto;
-        padding: 2%
-    }
-}
+//     button {
+//         background-color: #E28F83;
+//         color: #FFFFFF;
+//         border: 1px solid #E28F83;
+//         border-radius: 38px;
+//         display: flex;
+//         justify-content: center;
+//         text-align: center;
+//         width: 290px;
+//         margin: 3% auto;
+//         padding: 2%
+//     }
+// }
 
 .Link {
     text-decoration: none;
