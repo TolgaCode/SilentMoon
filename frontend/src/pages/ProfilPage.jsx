@@ -24,8 +24,8 @@ const ProfilPage = () => {
 
     return (
         <>
-            {/* <h1>Profil von {user.name}</h1> */}
-            {/* <button onClick={logout}>Logout</button> */}
+            <h1>Profil von {user.name}</h1>
+            <button onClick={logout}>Logout</button>
             <Navbar />
         </>
     );

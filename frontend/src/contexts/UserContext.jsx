@@ -9,29 +9,32 @@ export const UserProvider = ({ children }) => {
     const [user, setUser] = useState({});
     useEffect(() => {
         axios
-            .get(import.meta.env.VITE_BE_URL + "/api/verified")
+            .get(import.meta.env.VITE_BE_URL + "/api/verified", { withCredentials: true })
             .then((resp) => setUser(resp.data))
             .catch((e) => {
                 // ----?----
-                console.log(e);
+                //navigate('/login')
+                // console.log(e);
                 // ----?----
             });
     }, [navigate])
 
-    // const logout = async () => {
-    //     await axios.get("/api/logout");
-    //     setUser({});
-    //     navigate("/");
-    // };
+    const logout = async () => {
+        await axios.get(import.meta.env.VITE_BE_URL + "/api/logout", { withCredentials: true })
+        setUser({});
+        navigate("/");
+    };
+
 
     return (
         <UserContext.Provider
             value={{
-                user
+                user,
+                setUser,
                 // name: "TestContext",
                 // surname: "TestSurname",
                 // email: "Test@context.de"
-                // logout
+                logout
             }}
         >
             {children}
