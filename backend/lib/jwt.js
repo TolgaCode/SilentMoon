@@ -8,6 +8,7 @@ export function generateAccessToken(userEmailObj) {
 
 export function authenticateToken(req, res, next) {
     const authHeader = req.headers["authorization"];
+    // console.log(authHeader)
     let token = authHeader && authHeader.split(" ")[1];
 
     if (!token && req?.cookies?.auth) {
@@ -17,7 +18,6 @@ export function authenticateToken(req, res, next) {
     if (token == null) return res.sendStatus(401);
 
     jwt.verify(token, process.env.TOKEN_SECRET, (err, user) => {
-        console.log(err, user);
 
         if (err) return res.sendStatus(403);
 
