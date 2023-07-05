@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import '../sass/SliderItem.scss'
 
 const FavVideoSliderItem = (props) => {
-    console.log(props)
     return (
         <div className="slider_item_container">
             <Link to={`/video/${props.id}`}><img src={import.meta.env.VITE_BE_URL + `/api/thumbnail/${props.thumbnail}`} alt="thumbnail" className="slider_img" /></Link>

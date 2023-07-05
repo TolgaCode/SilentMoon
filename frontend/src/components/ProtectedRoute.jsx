@@ -10,7 +10,6 @@ const ProtectedRoute = () => {
     const checkAuth = async () => {
         axios.get(import.meta.env.VITE_BE_URL + "/api/verified", { withCredentials: true })
             .then((res) => {
-                console.log('i got response')
                 setIsAuth(true)
             })
             .catch((err) => {

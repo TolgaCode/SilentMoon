@@ -19,11 +19,7 @@ const Gallery = () => {
     const [searchTerm, setSearchTerm] = useState("");
 
     const handleSearch = (searchTerm) => {
-        axios
-            .get(
-                import.meta.env.VITE_BE_URL +
-                `/api/yogavideos?level=${level}&category=${category}&favVideos=${favVideos}&description=${description}`, { withCredentials: true }
-            )
+        axios.get(import.meta.env.VITE_BE_URL + `/api/yogavideos?level=${level}&category=${category}&favVideos=${favVideos}&description=${description}`, { withCredentials: true })
             .then((res) => {
                 // Filtere die Videos basierend auf dem Suchbegriff und Level
                 const filteredVideos = res.data.filter((video) => {
@@ -46,8 +42,6 @@ const Gallery = () => {
             .catch((err) => console.error(err))
         // if level or category changes through button click the api call retrieves the new asked for data
     }, [level, category, favVideos])
-
-    console.log(videos)
 
     const handleLevel = (input) => {
         if (input === level) {
