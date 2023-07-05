@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import '../sass/Gallery.scss'
 import { useEffect, useState } from "react";
 import anxiousIcon from '../assets/img/anxious_button.svg';
 import allIcon from '../assets/img/all_button.svg';
@@ -131,24 +131,25 @@ const Gallery = () => {
                 placeholder="Schlagwörter eingeben"
             />
 
-
-            {
-                videos.length > 0 && videos.map((item, i) => {
-                    return (
-                        <GalleryItem
-                            key={i}
-                            id={item._id}
-                            category={item.category}
-                            thumbnail={item.thumbnail}
-                        />
+            <article className="gallery_container_grid">
+                {
+                    videos.length > 0 && videos.map((item, i) => {
+                        return (
+                            <GalleryItem
+                                key={i}
+                                id={item._id}
+                                category={item.category}
+                                thumbnail={item.thumbnail}
+                            />
+                        )
+                    })
+                }
+                {
+                    videos.length === 0 && (
+                        <div>Sorry no videos found</div>
                     )
-                })
-            }
-            {
-                videos.length === 0 && (
-                    <div>Sorry no videos found</div>
-                )
-            }
+                }
+            </article>
         </section >
     );
 }
