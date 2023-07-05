@@ -121,14 +121,36 @@ a {
 
 .hdl-medium-green {
   font-family: $sansP900;
-  font-size: 2.4rem;
+  font-size: 2rem;
   color: $darkGreen;
+  letter-spacing: 0.2rem;
+}
+
+.hdl-medium-darkgray {
+  font-family: $sansP900;
+  font-size: 2rem;
+  color: $darkGray;
   letter-spacing: 0.2rem;
 }
 
 .description_medium_lightgray {
   font-family: $sansP600;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   color: $lightGray;
   letter-spacing: 0.1rem;
+}
+
+.hdl-gray-sites {
+  font-family: $sansP900;
+  font-size: 2.4rem;
+  color: $darkGray;
+  text-align: center;
+  margin: 35px 0 20px 0;
+}
+
+.subhead-sites {
+  font-family: $sansP600;
+  color: $lightGray;
+  text-align: center;
+  margin-bottom: 40px;
 }

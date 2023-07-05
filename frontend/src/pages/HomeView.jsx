@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import Slider from "../components/Slider";
 import VideoSlider from "../components/VideoSlider.jsx";
 import HomeTopItem from "../components/HomeTopItem";
+import Searchbar from "../components/SearchBar.jsx";
 import '../sass/HomeView.scss'
 import '../App.scss'
 
@@ -22,16 +23,21 @@ const HomeView = () => {
                 <p className="description_medium_lightgray">We hope you have a good day</p>
             </article>
             <section className="home_start_section">
-                <article>
+                <article className="homeTopItem_container">
+                    <HomeTopItem />
                     <HomeTopItem />
                 </article>
 
-                <article>
-                    <h2>Recommended Yoga for you</h2>
+                <div className="searchbar_container">
+                    <Searchbar />
+                </div>
+                <article className="sliderContainer">
+                    <h2 className="hdl-medium-green">Recommended Yoga for you</h2>
                     <VideoSlider />
+                      
                 </article>
-                <article>
-                    <h2>Recommended Meditation for you</h2>
+                <article className="sliderContainer">
+                    <h2 className="hdl-medium-darkgray" >Recommended Meditation for you</h2>
                     <Slider />
                 </article>
 
