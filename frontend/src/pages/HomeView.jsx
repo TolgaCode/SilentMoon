@@ -4,6 +4,7 @@ import { UserContext } from "../contexts/UserContext.jsx";
 import Navbar from "../components/Navbar";
 import Slider from "../components/Slider";
 import HomeTopItem from "../components/HomeTopItem";
+import Searchbar from "../components/SearchBar.jsx";
 import '../sass/HomeView.scss'
 import '../App.scss'
 
@@ -24,13 +25,13 @@ const HomeView = () => {
                 <article>
                     <HomeTopItem />
                 </article>
-
-                <article>
-                    <h2>Recommended Yoga for you</h2>
+                <Searchbar />
+                <article className="sliderContainer">
+                    <h2 className="hdl-medium-green">Recommended Yoga for you</h2>
                     <Slider />
                 </article>
-                <article>
-                    <h2>Recommended Meditation for you</h2>
+                <article className="sliderContainer">
+                    <h2 className="hdl-medium-darkgray" >Recommended Meditation for you</h2>
                     <Slider />
                 </article>
 
