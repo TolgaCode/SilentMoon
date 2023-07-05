@@ -10,6 +10,7 @@ import Playlist from './pages/PlaylistDetail'
 import LandingPage from './pages/LandingPage';
 import Welcome from './pages/Welcome';
 import Video from './pages/Video';
+import Reminder from './pages/Reminder'
 import ProtectedRoute from './components/ProtectedRoute';
 
 
@@ -28,6 +29,7 @@ function App() {
           <Route path='/video/:id' element={<Video />} />
           <Route path='/welcome' element={<Welcome />} />
           <Route path='/home' element={<HomeView />} />
+          <Route path='/reminder' element={<Reminder />} />
         </Route>
       </Routes >
     </>
