@@ -2,13 +2,14 @@ import axios from "axios";
 
 import { useEffect, useState } from "react";
 import anxiousIcon from '../assets/img/anxious_button.svg';
-import sleepIcon from '../assets/img/sleep_button.svg';
 import allIcon from '../assets/img/all_button.svg';
 import allIconActive from '../assets/img/all_button_active.svg'
-import GalleryItem from "./GalleryItem.jsx";
-import Searchbar from "./SearchBar.jsx";
-import favIcon from "../assets/img/favorites_button.svg"
-import "../sass/Gallery.scss";
+import GalleryItem from './GalleryItem.jsx';
+import Searchbar from './SearchBar.jsx';
+import favIcon from '../assets/img/favorites_button.svg';
+import strengthIcon from '../assets/img/strength_button.svg';
+import flexibilityIcon from '../assets/img/flexibility_button.svg';
+import '../sass/Gallery.scss';
 
 const Gallery = () => {
 
@@ -105,15 +106,15 @@ const Gallery = () => {
                 </div>
                 <div className="button_container">
                     <button className="category_button" onClick={() => { handleCategory('stressrelief') }}><img src={anxiousIcon} alt="" /></button>
-                    <p>Anxious</p>
+                    <p>Stress</p>
                 </div>
                 <div className="button_container">
-                    <button className="category_button" onClick={() => { handleCategory('flexability') }}><img src={sleepIcon} alt="" /></button>
-                    <p>Sleep</p>
+                    <button className="category_button" onClick={() => { handleCategory('flexibility') }}><img src={flexibilityIcon} alt="" /></button>
+                    <p>Flexibility</p>
                 </div>
                 <div className="button_container">
-                    <button className="category_button" onClick={() => { handleCategory('strength') }}><img src={sleepIcon} alt="" /></button>
-                    <p>Anxious</p>
+                    <button className="category_button" onClick={() => { handleCategory('strength') }}><img src={strengthIcon} alt="" /></button>
+                    <p>Strength</p>
                 </div>
                 <button className="category_button" onClick={() => { handleLevel('beginner') }}>Beginner</button>
                 <button className="category_button" onClick={() => { handleLevel('intermediate') }}>Intermediate</button>
