@@ -78,7 +78,7 @@ app.post("/api/login", async (req, res) => {
     const isVerified = user.verifyPassword(req.body.password);
     if (isVerified) {
         const token = generateAccessToken({ email });
-        res.cookie("auth", token, { httpOnly: true, maxAge: 1000 * 60 * 30 });
+        res.cookie("auth", token, { httpOnly: true, secure: true, sameSite: "none", maxAge: 1000 * 60 * 30 });
         return res.send({ data: { token }, user });
     }
 
