@@ -3,6 +3,7 @@ import { UserContext } from "../contexts/UserContext.jsx";
 
 import Navbar from "../components/Navbar";
 import Slider from "../components/Slider";
+import VideoSlider from "../components/VideoSlider.jsx";
 import HomeTopItem from "../components/HomeTopItem";
 import '../sass/HomeView.scss'
 import '../App.scss'
@@ -27,7 +28,7 @@ const HomeView = () => {
 
                 <article>
                     <h2>Recommended Yoga for you</h2>
-                    <Slider />
+                    <VideoSlider />
                 </article>
                 <article>
                     <h2>Recommended Meditation for you</h2>
