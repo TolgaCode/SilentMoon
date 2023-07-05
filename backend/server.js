@@ -224,7 +224,18 @@ app.put('/api/favouriseVideo/:id', authenticateToken, async (req, res) => {
     catch (err) {
         console.error(err)
     }
+})
 
+app.put('/api/reminder', authenticateToken, async (req, res) => {
+    let { time, days } = req.body;
+    try {
+        await User.updateOne({ email: req.userEmail }, { $set: { reminder: { time, days } } })
+        let user = await User.findOne({ email: req.userEmail });
+        res.send(user)
+    }
+    catch (err) {
+        console.error(err)
+    }
 })
 
 app.listen(PORT, () => {
