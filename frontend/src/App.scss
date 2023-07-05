@@ -86,8 +86,12 @@ a {
   border: 1px solid $peach;
   border-radius: 38px;
   width: 23rem;
-  padding: 4%;
-  margin: 3% auto
+  min-height: 4rem;
+  max-height: 6rem;
+  padding: 1%;
+  margin: 3% auto;
+  display: flex;
+  align-items: center;
 }
 
 .input {
@@ -97,8 +101,12 @@ a {
   border: 1px solid $peach;
   border-radius: 38px;
   width: 23rem;
-  padding: 4%;
+  min-height: 4rem;
+  max-height: 6rem;
+  padding: 1%;
   margin: 3% auto;
+  display: flex;
+  align-items: center;
 }
 
 //--------------HEADLINES--------------

@@ -34,13 +34,11 @@ const HomeView = () => {
                 <article className="sliderContainer">
                     <h2 className="hdl-medium-green">Recommended Yoga for you</h2>
                     <VideoSlider />
-                      
                 </article>
                 <article className="sliderContainer">
                     <h2 className="hdl-medium-darkgray" >Recommended Meditation for you</h2>
                     <Slider />
                 </article>
-
             </section>
             <Navbar />
         </div>

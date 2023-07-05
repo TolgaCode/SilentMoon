@@ -43,7 +43,6 @@ export default function LogIn() {
                 <button className="bigBtn-red">LOGIN</button>
             </form>
             <Link to={"/signup"} className="Link">DON`T HAVE AN ACCOUNT YET? <span> SIGN UP</span></Link>
-            <Link to={"/home"} className="Link">HOME</Link>
 
         </section >
     );

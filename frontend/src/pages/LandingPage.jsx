@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const LandingPage = () => {
     return (
-        <section>
+        <section className='landingContainer'>
             <div className='handstand'>
                 <h1 className='logoDark'>SILENT MOON</h1>
             </div>
