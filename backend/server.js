@@ -41,7 +41,7 @@ app.post("/api/signup", async (req, res) => {
     try {
         await newUser.save();
         const token = generateAccessToken({ email });
-        res.cookie("auth", token, { httpOnly: true, maxAge: 1000 * 60 * 30 });
+        res.cookie("auth", token, { httpOnly: true, secure: true, sameSite: "none", maxAge: 1000 * 60 * 30 });
         return res.send({
             data: {
                 newUser
