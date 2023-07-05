@@ -3,8 +3,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import anxiousIcon from '../assets/img/anxious_button.svg';
 import sleepIcon from '../assets/img/sleep_button.svg';
+import allIcon from '../assets/img/all_button.svg';
+import allIconActive from '../assets/img/all_button_active.svg'
 import GalleryItem from "./GalleryItem.jsx";
 import Searchbar from "./SearchBar.jsx";
+import favIcon from "../assets/img/favorites_button.svg"
 import "../sass/Gallery.scss";
 
 const Gallery = () => {
@@ -17,6 +20,10 @@ const Gallery = () => {
     const [favVideos, setFavVideos] = useState(undefined);
     const [description, setDescription] = useState(undefined);
     const [searchTerm, setSearchTerm] = useState("");
+    const [allButtonClicked, setAllButtonClicked] = useState(false);
+
+
+
 
     const handleSearch = (searchTerm) => {
         axios
@@ -36,6 +43,20 @@ const Gallery = () => {
                 setVideos(filteredVideos);
             })
             .catch((err) => console.error(err));
+    };
+
+
+    const handleButtonCategory = (input) => {
+
+        if (input === "all") {
+            setCategory(undefined);
+            setLevel(undefined);
+            setAllButtonClicked(true);
+        } else {
+            setCategory(input);
+            setLevel(undefined);
+            setAllButtonClicked(false);
+        }
     };
 
 
@@ -77,46 +98,69 @@ const Gallery = () => {
 
     return (
         <section>
-            <div>
-                <Searchbar
-                    onSearch={handleSearch}
-                    value={searchTerm}
-                    onChange={(e) => {
-                        setSearchTerm(e.target.value);
-                        handleSearch(); // Filterung bei Eingabe auslösen
-                    }}
-                    placeholder="Schlagwörter eingeben"
-                />
-                <button onClick={() => { handleCategory('stressrelief') }}><img src={anxiousIcon} alt="" /></button>
-                <button onClick={() => { handleCategory('flexability') }}><img src={sleepIcon} alt="" /></button>
-                <button onClick={() => { handleCategory('strength') }}><img src={sleepIcon} alt="" /></button>
-                <button onClick={() => { handleLevel('beginner') }}>Beginner</button>
-                <button onClick={() => { handleLevel('intermediate') }}>Intermediate</button>
-                <button onClick={() => { handleLevel('expert') }}>Expert</button>
-                <button onClick={() => { handleFavVideos('true') }}>Favoriten</button>
-                <button onClick={() => { setFavVideos(undefined); setLevel(undefined); setCategory(undefined) }}>Reset</button>
+            <article className="category_container">
+                <div className="button_container">
+                    <button className="category_button" onClick={() => { setFavVideos(undefined); setLevel(undefined); setCategory(undefined); handleButtonCategory("all") }}><img src={allButtonClicked ? allIconActive : allIcon} alt="" /></button>
+                    <p>All</p>
+                </div>
+                <div className="button_container">
+                    <button className="category_button" onClick={() => { handleFavVideos('true') }}><img src={favIcon} alt="" />
 
-            </div>
+                    </button>
+                    <p>Favorites</p>
+                </div>
+                <div className="button_container">
+                    <button className="category_button" onClick={() => { handleCategory('stressrelief') }}><img src={anxiousIcon} alt="" /></button>
+                    <p>Anxious</p>
+                </div>
+                <div className="button_container">
+                    <button className="category_button" onClick={() => { handleCategory('flexability') }}><img src={sleepIcon} alt="" /></button>
+                    <p>Sleep</p>
+                </div>
+                <div className="button_container">
+                    <button className="category_button" onClick={() => { handleCategory('strength') }}><img src={sleepIcon} alt="" /></button>
+                    <p>Anxious</p>
+                </div>
+                <button className="category_button" onClick={() => { handleLevel('beginner') }}>Beginner</button>
+                <button className="category_button" onClick={() => { handleLevel('intermediate') }}>Intermediate</button>
+                <button className="category_button" onClick={() => { handleLevel('expert') }}>Expert</button>
 
-            {videos.length > 0 && videos.map((item, i) => {
-                return (
-                    <GalleryItem
-                        key={i}
-                        id={item._id}
-                        category={item.category}
-                        thumbnail={item.thumbnail}
-                    />
+            </article>
+            <Searchbar
+                onSearch={handleSearch}
+                value={searchTerm}
+                onChange={(e) => {
+                    setSearchTerm(e.target.value);
+                    handleSearch(); // Filterung bei Eingabe auslösen
+                }}
+                placeholder="Schlagwörter eingeben"
+            />
+
+
+            {
+                videos.length > 0 && videos.map((item, i) => {
+                    return (
+                        <GalleryItem
+                            key={i}
+                            id={item._id}
+                            category={item.category}
+                            thumbnail={item.thumbnail}
+                        />
+                    )
+                })
+            }
+            {
+                videos.length === 0 && (
+                    <div>Sorry no videos found</div>
                 )
-            })}
-            {videos.length === 0 && (
-                <div>Sorry no videos found</div>
-            )}
-        </section>
+            }
+        </section >
     );
 }
-{/* <Searchbar onSearch={handleSearch} value={searchTerm}
-onChange={(e) => setSearchTerm(e.target.value)}
-placeholder="Schlagwörter eingeben" /> */}
 
 export default Gallery;
+
+
+
+
 

@@ -1,0 +1,19 @@
+.category_container {
+    display: flex;
+    overflow: scroll;
+    margin-bottom: 50px;
+
+    .button_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 15px;
+        margin-bottom: 20px;
+
+        .category_button {
+            border: 0;
+            background-color: transparent;
+        }
+    }
+}
