@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
+import { Link } from "react-router-dom"
 import '../sass/ProfilPage.scss'
 
 import logoutIcon from '../assets/img/logout_button.svg'
@@ -15,6 +16,7 @@ const ProfilPage = () => {
         <>
             <h1>Profil von {user.name}</h1>
             <img src={logoutIcon} alt='logoutIcon' onClick={logout} />
+            <Link to={"/reminder"}>Reminder</Link>
             <FavVideoSlider />
             <Navbar />
         </>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
 
@@ -15,7 +16,7 @@ const Welcome = () => {
             <article>
                 <h2 className='welcome_text'>Hi {user.name}, welcome to Silent Moon</h2>
             </article>
-            <button className='bigBtn-red'>GET STARTED</button>
+            <Link to={"/reminder"}><button className='bigBtn-red'>GET STARTED</button></Link>
         </section>
 
     );
