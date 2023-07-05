@@ -17,3 +17,28 @@
         }
     }
 }
+
+.gallery_container_grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, 45%);
+    justify-content: space-evenly;
+    background-color: antiquewhite;
+
+
+    .gallery_item {
+
+        background-color: aqua;
+        width: 100%;
+
+
+
+        .gallery_img {
+            width: 100%;
+            border-radius: 15px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+    }
+}
