@@ -22,10 +22,13 @@ const HomeView = () => {
                 <p className="description_medium_lightgray">We hope you have a good day</p>
             </article>
             <section className="home_start_section">
-                <article>
+                <article className="homeTopItem_container">
+                    <HomeTopItem />
                     <HomeTopItem />
                 </article>
-                <Searchbar />
+                <div className="searchbar_container">
+                    <Searchbar />
+                </div>
                 <article className="sliderContainer">
                     <h2 className="hdl-medium-green">Recommended Yoga for you</h2>
                     <Slider />
