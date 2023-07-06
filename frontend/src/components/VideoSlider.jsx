@@ -23,6 +23,7 @@ const VideoSlider = () => {
                             category={item.category}
                             thumbnail={item.thumbnail}
                             level={item.level}
+                            title={item.title}
                         />
                     )
                 })}

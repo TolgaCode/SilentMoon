@@ -1,5 +1,7 @@
 .home_item {
-    background-color: aqua;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     min-width: 170px;
     max-width: 170px;
     padding: 60px 10px 20px 15px;
@@ -13,7 +15,18 @@
     }
 
     .home_item_headline {
-        margin-bottom: 50px;
+        color: #FFECCC;
+        text-transform: capitalize;
+        font-family: 'SourceSansProBlack';
+        font-size: 1.8rem;
+        letter-spacing: 0.1rem;
+    }
+
+    .home_item_level {
+        color: #FFECCC;
+        text-transform: uppercase;
+        padding-top: 10px;
+        margin-bottom: 40px;
     }
 
     .home_topItem_btn {
@@ -24,5 +37,6 @@
         background-color: #FAF2DA;
         color: #4A503D;
         padding: 10px 10px;
+        margin-left: 95%;
     }
 }

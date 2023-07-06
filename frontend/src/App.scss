@@ -85,8 +85,8 @@ a {
   text-align: center;
   border: 1px solid $peach;
   border-radius: 38px;
-  width: 23rem;
-  min-height: 4rem;
+  width: 32rem;
+  min-height: 5rem;
   max-height: 6rem;
   padding: 1%;
   margin: 3% auto;
@@ -100,13 +100,14 @@ a {
   text-align: center;
   border: 1px solid $peach;
   border-radius: 38px;
-  width: 23rem;
-  min-height: 4rem;
+  width: 32rem;
+  min-height: 5rem;
   max-height: 6rem;
   padding: 1%;
   margin: 3% auto;
   display: flex;
   align-items: center;
+  background-color: transparent;
 }
 
 //--------------HEADLINES--------------
