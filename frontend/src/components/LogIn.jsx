@@ -36,7 +36,9 @@ export default function LogIn() {
 
     return (
         <section className="login-container">
-            <BackButton />
+            <div className="backBtn_container">
+                <BackButton />
+            </div>
             <h1 className="hdl-big-green-center">Welcome Back!</h1>
             <form className="login-form" onSubmit={loginHandler}>
                 <input className="input" type="email" id="email" placeholder="EMAIL" value={user.email} onChange={(e) => { setUser({ ...user, email: e.currentTarget.value }) }}></input>
