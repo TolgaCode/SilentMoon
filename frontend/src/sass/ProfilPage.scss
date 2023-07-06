@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'SourceSansProBlack';
+    src: url('../assets/font/SourceSansPro-Black.ttf');
+}
+
+$sansP900: 'SourceSansProBlack';
+
+.nameLogoutSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nameHeadline {
+    font-family: $sansP900;
+    font-size: 2.4rem;
+    color: #3F414E;
+    text-align: center;
+    padding: 3vh 0;
+}
+
+.iconSize {
+    width: 40px;
+}
+
+.iconTime {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.showTime {
+    color: #A1A4B2;
+    font-size: 1.6rem;
+}
+
+.reminderSection {
+    text-align: center;
+    padding: 1.5vh 0;
+}
+
+.profilSection {
+    margin: 0 4%;
+    padding-bottom: 6vh;
+}
