@@ -1,12 +1,15 @@
+.landingContainer {
+    height: 100vh;
+}
+
 .handstand {
     background-image: url('../assets/img/handstand_border.jpg');
     background-repeat: no-repeat;
-    // background-size: cover;
+    background-size: cover;
+    background-position: bottom;
     width: 100vw;
-    // height: 60vh;
-    display: flex;
-    flex-direction: column;
-    background-size: 100% auto;
+    max-width: 400px;
+    margin: 0 auto;
     padding-bottom: 65vh;
 }
 
@@ -39,7 +42,6 @@
     text-align: center;
     width: 80%;
     margin: 4% auto;
-    // padding: 0.5%
 }
 
 .intro-bigBtn-red:hover {

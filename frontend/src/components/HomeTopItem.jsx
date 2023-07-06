@@ -1,14 +1,26 @@
 import '../sass/HomeTopItem.scss'
 import { Link } from 'react-router-dom';
 
-const HomeTopItem = () => {
+
+const HomeTopItem = (props) => {
+
+    // const thumbnailUrl = `${import.meta.env.VITE_BE_URL}/api/thumbnail/${props.thumbnail}`;
+    // const thumbnailStyle = {
+    //     backgroundImage: `url(${thumbnailUrl})`,
+    // };
+    // console.log(import.meta.env.VITE_BE_URL + `/api/thumbnail/${props.thumbnail}`);
+
+
+    const thumbnailStyle = {
+        backgroundImage: `url(${import.meta.env.VITE_BE_URL}/api/thumbnail/${props.thumbnail})`
+    }
+
     return (
-        <div className="home_item" >
-            <h3 className='home_item_headline'>Healthy Back</h3>
-            <p>BEGINNER</p>
+        <div className="home_item" style={thumbnailStyle}>
+            <h3 className='home_item_headline'>{props.category}</h3>
+            <p className='home_item_level'>{props.level}</p>
             <div className='home_item_bottom'>
-                <p>3-10 MIN</p>
-                <Link to={`/login`}>
+                <Link to={`/ video / ${props.id}`}>
                     <button className='home_topItem_btn' >START</button>
                 </Link>
             </div>
@@ -17,6 +29,6 @@ const HomeTopItem = () => {
     );
 }
 // style={{
-//     backgroundImage: `url(${image})`,
+//     backgroundImage: `url(${ image })`,
 // }} 
 export default HomeTopItem;

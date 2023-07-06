@@ -1,4 +1,5 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+import axios from "axios";
 import { UserContext } from "../contexts/UserContext.jsx";
 
 import Navbar from "../components/Navbar";
@@ -15,6 +16,22 @@ const HomeView = () => {
     console.log(user);
 
 
+    // _________________________________
+    // RANDOM YOGA-VIDEO
+    const [videos, setVideos] = useState([]);
+    useEffect(() => {
+        axios.get(import.meta.env.VITE_BE_URL + `/api/yogavideos`, { withCredentials: true })
+            .then((res) => setVideos(res.data))
+            .catch((err) => console.error(err));
+    }, []);
+
+    const getRandomVideo = () => {
+        if (videos.length === 0) return null;
+        const randomIndex = Math.floor(Math.random() * videos.length);
+        return videos[randomIndex];
+    };
+    // _________________________________
+
     return (
         <div className="home_container">
             <h1 className="logoDark">SILENT MOON</h1>
@@ -24,7 +41,16 @@ const HomeView = () => {
             </article>
             <section className="home_start_section">
                 <article className="homeTopItem_container">
-                    <HomeTopItem />
+                    {getRandomVideo() && (
+                        <HomeTopItem
+                            key={getRandomVideo()._id}
+                            id={getRandomVideo()._id}
+                            category={getRandomVideo().category}
+                            title={getRandomVideo().title}
+                            level={getRandomVideo().level}
+                            thumbnail={getRandomVideo().thumbnail}
+                        />
+                    )}
                     <HomeTopItem />
                 </article>
 

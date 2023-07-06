@@ -11,10 +11,15 @@
     object-position: center;
 }
 
+.category {
+    text-transform: capitalize;
+}
+
 .slider_description {
     color: #A1A4B2;
     margin-top: 3px;
     display: flex;
     justify-content: space-between;
     padding-bottom: 8px;
+    text-transform: uppercase;
 }
