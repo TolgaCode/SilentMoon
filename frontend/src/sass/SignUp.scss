@@ -1,8 +1,13 @@
+.backBtn_sign_container {
+    padding: 5vh 0 6vh 5vw;
+}
+
 .signUp-container {
     background-color: #FFFFFF;
-    padding-top: 15vh;
     background-image: url('../assets/img/bg_login.jpg');
     background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
 }
 
 .signup-form {

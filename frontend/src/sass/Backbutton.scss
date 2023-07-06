@@ -1,8 +1,10 @@
 .backButton {
     background-image: url('../assets/img/Arrow_with_border.svg');
     background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
     background-color: #ffffff;
-    padding: 5%;
+    padding: 27.5px;
     border-radius: 50%;
     border-color: #FAF2DA;
 }
