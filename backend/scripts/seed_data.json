@@ -1,14 +1,6 @@
 {
     "videos": [
         {
-            "title": "head to knee",
-            "category": "flexability",
-            "level": "beginner",
-            "filepath": "./videos/the-head-to-knee-yoga-pose-3676-1080p.mp4",
-            "filename": "the-head-to-knee-yoga-pose-3676-1080p.mp4",
-            "description": "Seated forward bend, stretches legs, spine, hips, promotes flexibility, relaxation, and mental calmness."
-        },
-        {
             "title": "deep breathing",
             "category": "stressrelief",
             "level": "beginner",
@@ -31,6 +23,14 @@
             "filepath": "./videos/the-arms-to-heaven-yoga-pose.mp4",
             "filename": "the-arms-to-heaven-yoga-pose.mp4",
             "description": "Arms gracefully raised, legs and arms move in contrasting directions with fluidity."
+        },
+        {
+            "title": "head to knee",
+            "category": "flexability",
+            "level": "beginner",
+            "filepath": "./videos/the-head-to-knee-yoga-pose-3676-1080p.mp4",
+            "filename": "the-head-to-knee-yoga-pose-3676-1080p.mp4",
+            "description": "Seated forward bend, stretches legs, spine, hips, promotes flexibility, relaxation, and mental calmness."
         },
         {
             "title": "eight angle",
