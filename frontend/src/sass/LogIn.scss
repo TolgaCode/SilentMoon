@@ -1,39 +1,20 @@
 .login-container {
-    background-color: #FFFFFF;
+    // background-color: #FFFFFF;
+    background-image: url('../assets/img/bg_login.jpg');
     padding-top: 15vh;
+    background-repeat: no-repeat;
 }
 
-// .login-form {
-//     input {
-//         display: flex;
-//         justify-content: center;
-//         text-align: center;
-//         border: 1px solid #E28F83;
-//         border-radius: 38px;
-//         width: 290px;
-//         margin: 3% auto;
-//         padding: 2%
-//     }
-
-// button {
-//     background-color: #E28F83;
-//     color: #FFFFFF;
-//     border: 1px solid #E28F83;
-//     border-radius: 38px;
-//     display: flex;
-//     justify-content: center;
-//     text-align: center;
-//     width: 290px;
-//     margin: 3% auto;
-//     padding: 2%
-// }
-// }
+.login-form {
+    margin-top: 15%;
+}
 
 .Link {
     text-decoration: none;
     color: #A1A4B2;
     display: flex;
     justify-content: center;
+    padding-bottom: 20%;
 
     span {
         color: #E28F83

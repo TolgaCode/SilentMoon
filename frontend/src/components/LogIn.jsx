@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
+import BackButton from "./BackButton.jsx";
 import "../sass/LogIn.scss";
 
 export default function LogIn() {
@@ -35,6 +36,7 @@ export default function LogIn() {
 
     return (
         <section className="login-container">
+            <BackButton />
             <h1 className="hdl-big-green-center">Welcome Back!</h1>
             <form className="login-form" onSubmit={loginHandler}>
                 <input className="input" type="email" id="email" placeholder="EMAIL" value={user.email} onChange={(e) => { setUser({ ...user, email: e.currentTarget.value }) }}></input>
@@ -42,7 +44,7 @@ export default function LogIn() {
 
                 <button className="bigBtn-red">LOGIN</button>
             </form>
-            <Link to={"/signup"} className="Link">DON`T HAVE AN ACCOUNT YET? <span> SIGN UP</span></Link>
+            <Link to={"/signup"} className="Link">DON`T HAVE AN ACCOUNT YET? &nbsp; <span> SIGN UP</span></Link>
 
         </section >
     );
