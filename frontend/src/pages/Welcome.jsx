@@ -12,7 +12,7 @@ const Welcome = () => {
     return (
         <section className="welcome_section">
             <h1 className='logoLight'>SILENT MOON</h1>
-            <article>
+            <article className='welcome_text_container'>
                 <h2 className='welcome_text'>Hi {user.name}, welcome to Silent Moon</h2>
             </article>
             <button className='bigBtn-red'>GET STARTED</button>
