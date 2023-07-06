@@ -1,0 +1,55 @@
+.reminder {
+    margin: 8% 1vh;
+}
+
+.weekdays {
+    text-align: center;
+}
+
+.weekdays img {
+    padding: 3rem 0.5vh;
+}
+
+.question {
+    text-align: center;
+    color: #A1A4B2;
+    font-size: 1.6rem;
+    padding: 3rem 0;
+    line-height: 1.7rem;
+    font-family: 'SourceSansProRegular';
+    font-weight: 500;
+}
+
+.timePicker {
+    text-align: center;
+    padding: 3rem 0.5vh;
+}
+
+.reminder_btn {
+    padding: 3rem 0;
+}
+
+
+.react-ios-time-picker {
+    .react-ios-time-picker-container {
+        background-color: #fff;
+    }
+    .react-ios-time-picker-selected-overlay {
+        background-color: rgba(227, 143, 130, 0.5);
+    }
+    .react-ios-time-picker-btn-container {
+        background-color: #fff;
+    }
+    .react-ios-time-picker-btn {
+        color: #e38f82;
+    }
+    .react-ios-time-picker-cell-inner-hour-format:hover {
+        background-color: #e38f82;
+    }
+    .react-ios-time-picker-cell-inner-hour:hover,
+    .react-ios-time-picker-cell-inner-minute:hover,
+    .react-ios-time-picker-cell-inner-hour-format:hover {
+    background-color: #e38f82;
+    color: white;
+    }
+}

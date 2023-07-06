@@ -41,7 +41,7 @@ app.post("/api/signup", async (req, res) => {
     try {
         await newUser.save();
         const token = generateAccessToken({ email });
-        res.cookie("auth", token, { httpOnly: true, maxAge: 1000 * 60 * 30 });
+        res.cookie("auth", token, { httpOnly: true, secure: true, sameSite: "none", maxAge: 1000 * 60 * 30 });
         return res.send({
             data: {
                 newUser
@@ -224,7 +224,18 @@ app.put('/api/favouriseVideo/:id', authenticateToken, async (req, res) => {
     catch (err) {
         console.error(err)
     }
+})
 
+app.put('/api/reminder', authenticateToken, async (req, res) => {
+    let { time, days } = req.body;
+    try {
+        await User.updateOne({ email: req.userEmail }, { $set: { reminder: { time, days } } })
+        let user = await User.findOne({ email: req.userEmail });
+        res.send(user)
+    }
+    catch (err) {
+        console.error(err)
+    }
 })
 
 app.listen(PORT, () => {

@@ -7,7 +7,8 @@ const userSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true, lowercase: true },
     salt: { type: String, required: true, select: false },
     hash: { type: String, required: true, select: false },
-    favVideos: [{ type: mongoose.SchemaTypes.ObjectId, ref: "Video" }]
+    favVideos: [{ type: mongoose.SchemaTypes.ObjectId, ref: "Video" }],
+    reminder: { time: { type: String, default: "00:00" }, days: [{ type: String }] }
 });
 
 userSchema.methods.setPassword = function (password) {
