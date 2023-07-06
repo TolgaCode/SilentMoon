@@ -1,44 +1,20 @@
 .signUp-container {
     background-color: #FFFFFF;
     padding-top: 15vh;
+    background-image: url('../assets/img/bg_login.jpg');
+    background-repeat: no-repeat;
 }
 
-// .hdl-big-green-center {
-//     color: #4A503D;
-//     text-align: left;
-// }
-
-// form {
-//     input {
-//         display: flex;
-//         justify-content: center;
-//         text-align: center;
-//         border: 1px solid #E28F83;
-//         border-radius: 38px;
-//         width: 290px;
-//         margin: 3% auto;
-//         padding: 2%
-//     }
-
-//     button {
-//         background-color: #E28F83;
-//         color: #FFFFFF;
-//         border: 1px solid #E28F83;
-//         border-radius: 38px;
-//         display: flex;
-//         justify-content: center;
-//         text-align: center;
-//         width: 290px;
-//         margin: 3% auto;
-//         padding: 2%
-//     }
-// }
+.signup-form {
+    margin-top: 15%;
+}
 
 .Link {
     text-decoration: none;
     color: #A1A4B2;
     display: flex;
     justify-content: center;
+    padding-bottom: 20%;
 
     span {
         color: #E28F83

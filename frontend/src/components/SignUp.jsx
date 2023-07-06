@@ -63,7 +63,7 @@ export default function SignUp() {
     return (
         <section className="signUp-container">
             <h1 className="hdl-big-green-center" >Create your Account</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="signup-form">
                 <input className="input" type="text" id="name" placeholder="NAME" value={data.name} onChange={(e) => { setData({ ...data, name: e.currentTarget.value }) }} />
                 <input className="input" type="text" id="surname" placeholder="SURNAME" value={data.surname} onChange={(e) => { setData({ ...data, surname: e.currentTarget.value }) }} />
                 <input className="input" type="email" id="email" placeholder="EMAIL" value={data.email} onChange={(e) => { setData({ ...data, email: e.currentTarget.value }) }} />
@@ -71,7 +71,7 @@ export default function SignUp() {
 
                 <button className="bigBtn-red">REGISTER</button>
             </form>
-            <Link to={"/login"} className="Link">YOU ARE ALREADY A USER. <span> CLICK HERE</span></Link>
+            <Link to={"/login"} className="Link">YOU ARE ALREADY A USER. &nbsp; <span> CLICK HERE</span></Link>
         </section>
     );
 }
