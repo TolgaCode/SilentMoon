@@ -8,8 +8,12 @@ import GalleryItem from './GalleryItem.jsx';
 import Searchbar from './SearchBar.jsx';
 import favIcon from '../assets/img/favorites_button.svg';
 import strengthIcon from '../assets/img/strength_button.svg';
+import beginnerIcon from '../assets/img/beginner_button.svg';
+import expertIcon from '../assets/img/expert_button.svg';
+import intermediateIcon from '../assets/img/intermediate_button.svg';
 import flexibilityIcon from '../assets/img/flexibility_button.svg';
 import '../sass/Gallery.scss';
+import DailyCalm from "./DailyCalm.jsx";
 
 const Gallery = () => {
 
@@ -22,6 +26,7 @@ const Gallery = () => {
     const [description, setDescription] = useState(undefined);
     const [searchTerm, setSearchTerm] = useState("");
     const [allButtonClicked, setAllButtonClicked] = useState(false);
+    const sizes = ["thumbnailSmall", "thumbnailMedium", "thumbnailLarge"];
 
 
 
@@ -116,9 +121,18 @@ const Gallery = () => {
                     <button className="category_button" onClick={() => { handleCategory('strength') }}><img src={strengthIcon} alt="" /></button>
                     <p>Strength</p>
                 </div>
-                <button className="category_button" onClick={() => { handleLevel('beginner') }}>Beginner</button>
-                <button className="category_button" onClick={() => { handleLevel('intermediate') }}>Intermediate</button>
-                <button className="category_button" onClick={() => { handleLevel('expert') }}>Expert</button>
+                <div className="button_container">
+                    <button className="category_button" onClick={() => { handleLevel('beginner') }}><img src={beginnerIcon} alt="" /></button>
+                    <p>Beginner</p>
+                </div>
+                <div className="button_container">
+                    <button className="category_button" onClick={() => { handleLevel('intermediate') }}><img src={intermediateIcon} alt="" /></button>
+                    <p>Intermediate</p>
+                </div>
+                <div className="button_container">
+                    <button className="category_button" onClick={() => { handleLevel('expert') }}><img src={expertIcon} alt="" /></button>
+                    <p>Expert</p>
+                </div>
 
             </article>
             <Searchbar
@@ -130,9 +144,12 @@ const Gallery = () => {
                 }}
                 placeholder="Schlagwörter eingeben"
             />
+            <DailyCalm />
 
             <article className="gallery_container_grid">
+
                 {
+
                     videos.length > 0 && videos.map((item, i) => {
                         return (
                             <GalleryItem
@@ -140,6 +157,7 @@ const Gallery = () => {
                                 id={item._id}
                                 category={item.category}
                                 thumbnail={item.thumbnail}
+                                size={sizes[i % sizes.length]}
                             />
                         )
                     })

@@ -20,25 +20,38 @@
 
 .gallery_container_grid {
     display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(auto-fill, 45%);
+    grid-template-columns: repeat(auto-fill, 47.5%);
+    grid-auto-rows: 5px;
+    gap: 20px;
+    margin-top: 2rem;
     justify-content: space-evenly;
-    background-color: antiquewhite;
+}
+
+.thumbnailSmall {
+    grid-row: span 7;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.4rem;
+}
 
 
-    .gallery_item {
+.thumbnailMedium {
+    grid-row: span 12;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.4rem;
 
-        background-color: aqua;
-        width: 100%;
+}
 
-
-
-        .gallery_img {
-            width: 100%;
-            border-radius: 15px;
-            object-fit: cover;
-            object-position: center;
-        }
-
-    }
+.thumbnailLarge {
+    grid-row: span 14;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.4rem;
 }
