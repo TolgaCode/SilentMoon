@@ -28,7 +28,7 @@ export default function useAuth(code) {
     useEffect(() => {
         if (!refreshToken || !expiresIn) return
         const interval = setInterval(() => {
-        axios.post(import.meta.env.VITE_BE_URL +'/refresh', {
+        axios.post(import.meta.env.VITE_BE_URL + '/refresh', {
             refreshToken,
         }, {withCredentials:true})
         .then(res => {

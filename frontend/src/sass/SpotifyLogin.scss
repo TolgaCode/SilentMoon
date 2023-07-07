@@ -33,20 +33,22 @@
     align-items: center;
     transform: translateX(10rem);
     height: 10vh;
+    width: 50vw;
 }
 
 .playlist-play-btn {
     width: 4.3rem;
     height: 4.3rem;
-    transform: translateY(30rem);
-    margin-right: 42rem;
+    transform: translateY(3rem);
+    margin-right: 4rem;
+    border: 1px solid red;
 }
 
 .playlist-information {
     transform: translateY(3rem);
-    margin-right: 40rem;
+    border: 1px solid red;
+    width: 100%;
 }
-
 
 .spotifyBtn {
     width: 20rem;
