@@ -243,7 +243,6 @@ app.put('/api/reminder', authenticateToken, async (req, res) => {
 // *** SPOTIFY LOGIN & HANDLING ***
 app.post('/login-spotify', (req, res) => {
     const code = req.body.code;
-    console.log("!!!!!!", req.body.code)
     const spotifyApi = new SpotifyWebApi({
         redirectUri: process.env.FRONTEND_URL,
         clientId: '162481308a2843359b4127ab067567b3',
@@ -263,6 +262,7 @@ app.post('/login-spotify', (req, res) => {
             res.sendStatus(400)
         })
 })
+
 
 app.post('/refresh', authenticateToken, (req, res) => {
     const refreshToken = req.body.refreshToken
