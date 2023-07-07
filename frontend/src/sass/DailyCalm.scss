@@ -3,7 +3,12 @@
     background-position: center;
     background-size: cover;
     border-radius: 10px;
-    padding: 3rem 2.5rem;
+    padding: 3rem 4rem 3rem 3rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.play_button_dailycalm {
+    width: 125%;
 }
