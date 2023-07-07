@@ -2,10 +2,8 @@ import axios from 'axios';
 import ReactPlayer from 'react-player/file';
 import { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import heartIcon from '../assets/img/favorites_button.svg'
-import heart from '../assets/img/like_button.svg'
 import redheart from '../assets/img/red_heart.svg'
-import heartIconActive from '../assets/img/favorites_active_button.svg'
+import emptyheart from '../assets/img/empty_heart.svg'
 import BackButton from "../components/BackButton.jsx";
 
 import '../sass/Video.scss'
@@ -39,10 +37,12 @@ const Video = () => {
                     width='100%'
                 />
             </div>
-            <img src={heart} alt="" />
-            <img src={redheart} alt="" />
-            <img src={user.favVideos?.includes(id) ? heartIconActive : heartIcon} alt="" onClick={() => { axios.put(import.meta.env.VITE_BE_URL + `/api/favouriseVideo/${id}`, {}, { withCredentials: true }).then((res) => { setUser(res.data) }) }} />
-            <p className='videoDescription'>{video.description}</p>
+            <div className='textSection'>
+                <img src={user.favVideos?.includes(id) ? redheart : emptyheart} alt="" onClick={() => { axios.put(import.meta.env.VITE_BE_URL + `/api/favouriseVideo/${id}`, {}, { withCredentials: true }).then((res) => { setUser(res.data) }) }} />
+                <h2 className="hdl-medium-green title-head">{video.title}</h2>
+                <h2 className="level-head">{video.level}</h2>
+                <p className='description-head'>{video.description}</p>
+            </div>
         </article>
     );
 }
