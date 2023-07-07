@@ -1,14 +1,25 @@
-// .player-wrapper {
-//   position: relative;
-//   padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
-// }
-
-// .react-player {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-// }
-
 .videoSection {
   margin: 0 4% 27% 4%;
+}
+
+.textSection {
+  padding: 3vh 0;
+  .title-head {
+    padding: 1.5vh 0;
+    text-transform: capitalize;
+  }
+  .level-head {
+    color: #A1A4B2;
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+    font-family: 'SourceSansProRegular';
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-bottom: 1.5vh;
+  }
+  .description-head {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #A1A4B2;
+}
 }
