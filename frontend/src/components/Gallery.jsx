@@ -70,9 +70,6 @@ const Gallery = () => {
             setstressreliefButtonClicked(false);
             setStrengthButtonClicked(false);
             setFlexibilityButtonClicked(false);
-            setBeginnerButtonClicked(false);
-            setIntermediateButtonClicked(false);
-            setExpertButtonClicked(false);
             setFavButtonClicked(false);
 
         } else if (input === 'flexibility') {
@@ -96,47 +93,54 @@ const Gallery = () => {
         } else if (input === 'strength') {
             setCategory(input);
             setLevel(undefined);
-            setAllButtonClicked(false);
             setFlexibilityButtonClicked(false);
             setstressreliefButtonClicked(false);
             setStrengthButtonClicked(true);
             setFavButtonClicked(false);
 
         } else if (input === 'beginner') {
-            setLevel('beginner');
-            setAllButtonClicked(false);
-            setBeginnerButtonClicked(true);
+            if (level === 'beginner') {
+                setLevel(undefined);
+            } else {
+                setLevel('beginner');
+            }
+            // setAllButtonClicked(false);
+            setBeginnerButtonClicked((prevClicked) => !prevClicked);
             setIntermediateButtonClicked(false);
             setExpertButtonClicked(false);
-            setFavButtonClicked(false);
 
         } else if (input === 'intermediate') {
-            setLevel('intermediate');
-            setAllButtonClicked(false);
+            if (level === 'intermediate') {
+                setLevel(undefined);
+            } else {
+                setLevel('intermediate');
+            }
+            // setAllButtonClicked(false);
             setBeginnerButtonClicked(false);
-            setIntermediateButtonClicked(true);
+            setIntermediateButtonClicked((prevClicked) => !prevClicked);
             setExpertButtonClicked(false);
-            setFavButtonClicked(false);
 
         } else if (input === 'expert') {
-            setLevel('expert');
-            setAllButtonClicked(false);
+            if (level === 'expert') {
+                setLevel(undefined);
+            } else {
+                setLevel('expert');
+            }
+            // setAllButtonClicked(false);
             setBeginnerButtonClicked(false);
             setIntermediateButtonClicked(false);
-            setExpertButtonClicked(true);
-            setFavButtonClicked(false);
+            setExpertButtonClicked((prevClicked) => !prevClicked);
 
-        } else if (input === 'favVideos') {
+        }
+
+        else if (input === 'favVideos') {
             setCategory(undefined);
             setLevel(undefined);
             setAllButtonClicked(false);
             setFlexibilityButtonClicked(false);
             setstressreliefButtonClicked(false);
             setStrengthButtonClicked(false);
-            setBeginnerButtonClicked(false);
-            setIntermediateButtonClicked(false);
-            setExpertButtonClicked(false);
-            setFavButtonClicked(true);
+            setFavButtonClicked((prevClicked) => !prevClicked);
 
         }
         else {
@@ -171,7 +175,6 @@ const Gallery = () => {
             setCategory(input)
         }
     }
-
 
     const handleLevel = (input) => {
         if (input === level) {

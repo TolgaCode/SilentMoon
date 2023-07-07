@@ -7,10 +7,10 @@
 .searchInput {
     width: 100%;
     border: none;
-    border-radius: 0.5em;
+    border-radius: 1.3rem;
     font-size: 1.2em;
     transition: width 0.5s ease-in-out;
-    background: url('../assets/img/search.svg') no-repeat right;
+    background: url('../assets/img/search.svg') no-repeat right 10px center;
     background-color: rgba(161, 164, 178, 0.2);
     padding: 10px;
 
