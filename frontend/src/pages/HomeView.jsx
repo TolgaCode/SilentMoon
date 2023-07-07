@@ -13,24 +13,14 @@ import '../App.scss'
 
 const HomeView = () => {
     const { user } = useContext(UserContext);
-    console.log(user);
+    // console.log(user);
 
 
     // _________________________________
-    // RANDOM YOGA-VIDEO
-    const [videos, setVideos] = useState([]);
-    useEffect(() => {
-        axios.get(import.meta.env.VITE_BE_URL + `/api/yogavideos`, { withCredentials: true })
-            .then((res) => setVideos(res.data))
-            .catch((err) => console.error(err));
-    }, []);
+    // SEARCHBAR
 
-    const getRandomVideo = () => {
-        if (videos.length === 0) return null;
-        const randomIndex = Math.floor(Math.random() * videos.length);
-        return videos[randomIndex];
-    };
-    // _________________________________
+
+
 
     return (
         <div className="home_container">
@@ -41,16 +31,7 @@ const HomeView = () => {
             </article>
             <section className="home_start_section">
                 <article className="homeTopItem_container">
-                    {getRandomVideo() && (
-                        <HomeTopItem
-                            key={getRandomVideo()._id}
-                            id={getRandomVideo()._id}
-                            category={getRandomVideo().category}
-                            title={getRandomVideo().title}
-                            level={getRandomVideo().level}
-                            thumbnail={getRandomVideo().thumbnail}
-                        />
-                    )}
+                    <HomeTopItem />
                     <HomeTopItem />
                 </article>
 
