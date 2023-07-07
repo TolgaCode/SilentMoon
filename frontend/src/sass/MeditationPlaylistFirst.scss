@@ -1,0 +1,128 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  h1 {
+    color: black;
+  }
+  a {
+    text-decoration: none;
+  }
+  
+  .spotify-head {
+    display: flex;
+    justify-content: center;
+    width: 20rem;
+    height: 80vh;
+    border-radius: 30px;
+    color: #fff;
+  }
+  
+  .input {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 23.8rem;
+    height: 1.4rem;
+    top: .1rem;
+    right: 0;
+    left: 0;
+  }
+  
+  .songs {
+    height: 28vh;
+    bottom: 20px;
+    width: 25rem;
+    padding-bottom: 20rem;
+    max-height: 20rem;
+    overflow-y: auto;
+  }
+  
+  .player {
+    position: fixed;
+    width: 24.3rem;
+    bottom: 50px;
+    left: 0;
+  }
+  .PlaylistResult {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    text-transform: capitalize;
+  }
+  .playlist-cover {
+    margin-left: .2rem;
+    padding: .3rem;
+    left: 0;
+  }
+  .playlist-title {
+    font-size: .9rem;
+    width: 50%;
+    text-align: left;
+    padding-left: .7rem;
+  }
+  ._ControlsRSWP.__11aa6ep {
+    height: 24vh;
+  }
+  .rswp__active._InfoRSWP.__1jmym9x {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    width: 18rem;
+    height: 18rem;
+  }
+  .rswp__active._InfoRSWP.__1jmym9x img {
+    height: 10rem;
+    width: 10rem;
+    border-radius: .1rem;
+  }
+  .rswp__active._InfoRSWP.__1jmym9x a {
+    font-size: .73rem;
+  }
+  ._ContentWrapperRSWP.__1c53jt9 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    width: 50rem;
+  }
+  ._ContentWrapperRSWP.__1c53jt9 ._ContentRSWP.__mdrp5m {
+    display: flex;
+    flex-direction: column;
+  }
+  ._ContentRSWP.__mdrp5m {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    text-align: center;
+  }
+  ._ContentWrapperRSWP.__1c53jt9  {
+    height: 100vh;
+    width: fit-content;
+  }
+  .rswp__toggle._ControlsButtonRSWP.__3hmsj {
+    width: 5rem;
+    height: 5rem;
+  }
+  .rswp__toggle._ControlsButtonRSWP.__3hmsj svg {
+    width: 4rem;
+    height: 4rem;
+    background-size: cover;
+  }
+  ._ControlsButtonRSWP.__3hmsj {
+    background-size: cover;
+    margin: 7px;
+  }
+  ._WrapperRSWP.__1g3et1y {
+    background-color: #fff;
+  }
+  ._SliderRSWP.__q14q70 {
+    margin-top: 2rem;
+  }
