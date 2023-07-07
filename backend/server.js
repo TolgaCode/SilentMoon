@@ -241,27 +241,27 @@ app.put('/api/reminder', authenticateToken, async (req, res) => {
 
 
 // *** SPOTIFY LOGIN & HANDLING ***
-app.post('/login-spotify',  (req, res) => {
+app.post('/login-spotify', (req, res) => {
     const code = req.body.code;
     console.log("!!!!!!", req.body.code)
-     const spotifyApi = new SpotifyWebApi({
+    const spotifyApi = new SpotifyWebApi({
         redirectUri: 'http://localhost:5173/music',
         clientId: '162481308a2843359b4127ab067567b3',
         clientSecret: '6737ee6753be4517b2cf497a39e32d11'
     })
 
     spotifyApi.authorizationCodeGrant(code)
-    .then(data => {
-        res.json({
-            accessToken: data.body.access_token,
-            refreshToken: data.body.refresh_token,
-            expiresIn: data.body.expires_in
+        .then(data => {
+            res.json({
+                accessToken: data.body.access_token,
+                refreshToken: data.body.refresh_token,
+                expiresIn: data.body.expires_in
+            })
         })
-    })
-    .catch((err) => {
-        console.log(err);
-        res.sendStatus(400)
-    })
+        .catch((err) => {
+            console.log(err);
+            res.sendStatus(400)
+        })
 })
 
 app.post('/refresh', authenticateToken, (req, res) => {
@@ -274,16 +274,16 @@ app.post('/refresh', authenticateToken, (req, res) => {
     })
 
     spotifyApi.refreshAccessToken()
-    .then(data => {
-        res.json({
-            accessToken: data.body.access_token,
-            expiresIn: data.body.expires_in
+        .then(data => {
+            res.json({
+                accessToken: data.body.access_token,
+                expiresIn: data.body.expires_in
+            })
+                .catch((err) => {
+                    console.log(err);
+                    res.sendStatus(400)
+                });
         })
-        .catch((err) => {
-            console.log(err);
-            res.sendStatus(400)
-        });
-    })
 });
 
 
@@ -291,6 +291,8 @@ app.post('/refresh', authenticateToken, (req, res) => {
 app.listen(PORT, () => {
     console.log("Server running on Port:", PORT);
 });
+
+// Stand incl. Spotify
 
 
 
