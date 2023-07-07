@@ -2,16 +2,23 @@ import axios from "axios";
 import '../sass/Gallery.scss'
 import { useEffect, useState } from "react";
 import anxiousIcon from '../assets/img/anxious_button.svg';
+import anxiousIconActive from '../assets/img/anxious_active_button.svg';
 import allIcon from '../assets/img/all_button.svg';
 import allIconActive from '../assets/img/all_button_active.svg'
 import GalleryItem from './GalleryItem.jsx';
 import Searchbar from './SearchBar.jsx';
+import favIconActive from '../assets/img/favorites_active_button.svg';
 import favIcon from '../assets/img/favorites_button.svg';
 import strengthIcon from '../assets/img/strength_button.svg';
+import strengthIconActive from '../assets/img/strength_active_button.svg';
 import beginnerIcon from '../assets/img/beginner_button.svg';
+import beginnerIconActive from '../assets/img/beginner_button_active.svg';
 import expertIcon from '../assets/img/expert_button.svg';
+import expertIconActive from '../assets/img/expert_button_active.svg';
 import intermediateIcon from '../assets/img/intermediate_button.svg';
+import intermediateIconActive from '../assets/img/intermediate_button_active.svg'
 import flexibilityIcon from '../assets/img/flexibility_button.svg';
+import flexibilityIconActive from '../assets/img/flexibility_active_button.svg'
 import '../sass/Gallery.scss';
 import DailyCalm from "./DailyCalm.jsx";
 
@@ -26,9 +33,16 @@ const Gallery = () => {
     const [description, setDescription] = useState(undefined);
     const [searchTerm, setSearchTerm] = useState("");
     const [allButtonClicked, setAllButtonClicked] = useState(false);
+    const [flexibilityButtonClicked, setFlexibilityButtonClicked] = useState(false);
+    const [stressreliefButtonClicked, setstressreliefButtonClicked] = useState(false);
+    const [strengthButtonClicked, setStrengthButtonClicked] = useState(false);
+    const [beginnerButtonClicked, setBeginnerButtonClicked] = useState(false);
+    const [intermediateButtonClicked, setIntermediateButtonClicked] = useState(false);
+    const [expertButtonClicked, setExpertButtonClicked] = useState(false);
+    const [favButtonClicked, setFavButtonClicked] = useState(false);
     const sizes = ["thumbnailSmall", "thumbnailMedium", "thumbnailLarge"];
 
-
+    // const flexibilityButtonIcon = flexibilityButtonClicked ? flexibilityIconActive : flexibilityIcon;
 
 
     const handleSearch = (searchTerm) => {
@@ -49,17 +63,96 @@ const Gallery = () => {
 
 
     const handleButtonCategory = (input) => {
-
-        if (input === "all") {
+        if (input === 'all') {
             setCategory(undefined);
             setLevel(undefined);
             setAllButtonClicked(true);
-        } else {
+            setstressreliefButtonClicked(false);
+            setStrengthButtonClicked(false);
+            setFlexibilityButtonClicked(false);
+            setBeginnerButtonClicked(false);
+            setIntermediateButtonClicked(false);
+            setExpertButtonClicked(false);
+            setFavButtonClicked(false);
+
+        } else if (input === 'flexibility') {
             setCategory(input);
             setLevel(undefined);
             setAllButtonClicked(false);
+            setstressreliefButtonClicked(false);
+            setStrengthButtonClicked(false);
+            setFlexibilityButtonClicked(true);
+            setFavButtonClicked(false);
+
+
+        } else if (input === 'stressrelief') {
+            setCategory(input);
+            setLevel(undefined);
+            setAllButtonClicked(false);
+            setFlexibilityButtonClicked(false);
+            setStrengthButtonClicked(false);
+            setstressreliefButtonClicked(true);
+            setFavButtonClicked(false);
+        } else if (input === 'strength') {
+            setCategory(input);
+            setLevel(undefined);
+            setAllButtonClicked(false);
+            setFlexibilityButtonClicked(false);
+            setstressreliefButtonClicked(false);
+            setStrengthButtonClicked(true);
+            setFavButtonClicked(false);
+
+        } else if (input === 'beginner') {
+            setLevel('beginner');
+            setAllButtonClicked(false);
+            setBeginnerButtonClicked(true);
+            setIntermediateButtonClicked(false);
+            setExpertButtonClicked(false);
+            setFavButtonClicked(false);
+
+        } else if (input === 'intermediate') {
+            setLevel('intermediate');
+            setAllButtonClicked(false);
+            setBeginnerButtonClicked(false);
+            setIntermediateButtonClicked(true);
+            setExpertButtonClicked(false);
+            setFavButtonClicked(false);
+
+        } else if (input === 'expert') {
+            setLevel('expert');
+            setAllButtonClicked(false);
+            setBeginnerButtonClicked(false);
+            setIntermediateButtonClicked(false);
+            setExpertButtonClicked(true);
+            setFavButtonClicked(false);
+
+        } else if (input === 'favVideos') {
+            setCategory(undefined);
+            setLevel(undefined);
+            setAllButtonClicked(false);
+            setFlexibilityButtonClicked(false);
+            setstressreliefButtonClicked(false);
+            setStrengthButtonClicked(false);
+            setBeginnerButtonClicked(false);
+            setIntermediateButtonClicked(false);
+            setExpertButtonClicked(false);
+            setFavButtonClicked(true);
+
+        }
+        else {
+            setCategory(input);
+            setLevel(undefined);
+            setAllButtonClicked(false);
+            setFlexibilityButtonClicked(false);
+            setstressreliefButtonClicked(false);
+            setStrengthButtonClicked(false);
+            setBeginnerButtonClicked(false);
+            setIntermediateButtonClicked(false);
+            setExpertButtonClicked(false);
+            setFavButtonClicked(false);
         }
     };
+
 
 
     // api call can retrieve all videos or videos specified by asking for level and category 
@@ -70,22 +163,24 @@ const Gallery = () => {
         // if level or category changes through button click the api call retrieves the new asked for data
     }, [level, category, favVideos])
 
-    const handleLevel = (input) => {
-        if (input === level) {
-            setLevel(undefined)
-        }
-        else {
-            setLevel(input)
-        }
-    }
     const handleCategory = (input) => {
-        if (input === level) {
+        if (input === category) {
             setCategory(undefined)
         }
         else {
             setCategory(input)
         }
     }
+
+
+    const handleLevel = (input) => {
+        if (input === level) {
+            setLevel(undefined);
+        } else {
+            setLevel(input);
+        }
+    };
+
 
     const handleFavVideos = (input) => {
         if (input === favVideos) {
@@ -104,33 +199,47 @@ const Gallery = () => {
                     <p>All</p>
                 </div>
                 <div className="button_container">
-                    <button className="category_button" onClick={() => { handleFavVideos('true') }}><img src={favIcon} alt="" />
-
+                    {/* <button className="category_button" onClick={() => { handleFavVideos('true') }}><img src={favIcon} alt="" />
+                    </button> */}
+                    <button className={`category_button ${favButtonClicked ? 'active' : ''}`} onClick={() => { handleButtonCategory('favVideos'); handleFavVideos('true') }}>
+                        <img src={favButtonClicked ? favIconActive : favIcon} alt="" />
                     </button>
                     <p>Favorites</p>
                 </div>
                 <div className="button_container">
-                    <button className="category_button" onClick={() => { handleCategory('stressrelief') }}><img src={anxiousIcon} alt="" /></button>
+                    <button className={`category_button ${stressreliefButtonClicked ? 'active' : ''}`} onClick={() => { handleCategory('stressrelief'); handleButtonCategory('stressrelief') }}>
+                        <img src={stressreliefButtonClicked ? anxiousIconActive : anxiousIcon} alt="" />
+                    </button>
                     <p>Stress</p>
                 </div>
                 <div className="button_container">
-                    <button className="category_button" onClick={() => { handleCategory('flexibility') }}><img src={flexibilityIcon} alt="" /></button>
+                    <button className={`category_button ${flexibilityButtonClicked ? 'active' : ''}`} onClick={() => { handleCategory('flexibility'); handleButtonCategory('flexibility') }}>
+                        <img src={flexibilityButtonClicked ? flexibilityIconActive : flexibilityIcon} alt="" />
+                    </button>
                     <p>Flexibility</p>
                 </div>
                 <div className="button_container">
-                    <button className="category_button" onClick={() => { handleCategory('strength') }}><img src={strengthIcon} alt="" /></button>
+                    <button className={`category_button ${strengthButtonClicked ? 'active' : ''}`} onClick={() => { handleCategory('strength'); handleButtonCategory('strength') }}>
+                        <img src={strengthButtonClicked ? strengthIconActive : strengthIcon} alt="" />
+                    </button>
                     <p>Strength</p>
                 </div>
                 <div className="button_container">
-                    <button className="category_button" onClick={() => { handleLevel('beginner') }}><img src={beginnerIcon} alt="" /></button>
+                    <button className={`category_button ${beginnerButtonClicked ? 'active' : ''}`} onClick={() => { handleLevel('beginner'); handleButtonCategory('beginner') }}>
+                        <img src={beginnerButtonClicked ? beginnerIconActive : beginnerIcon} alt="" />
+                    </button>
                     <p>Beginner</p>
                 </div>
                 <div className="button_container">
-                    <button className="category_button" onClick={() => { handleLevel('intermediate') }}><img src={intermediateIcon} alt="" /></button>
+                    <button className={`category_button ${intermediateButtonClicked ? 'active' : ''}`} onClick={() => { handleLevel('intermediate'); handleButtonCategory('intermediate') }}>
+                        <img src={intermediateButtonClicked ? intermediateIconActive : intermediateIcon} alt="" />
+                    </button>
                     <p>Intermediate</p>
                 </div>
                 <div className="button_container">
-                    <button className="category_button" onClick={() => { handleLevel('expert') }}><img src={expertIcon} alt="" /></button>
+                    <button className={`category_button ${expertButtonClicked ? 'active' : ''}`} onClick={() => { handleLevel('expert'); handleButtonCategory('expert') }}>
+                        <img src={expertButtonClicked ? expertIconActive : expertIcon} alt="" />
+                    </button>
                     <p>Expert</p>
                 </div>
 
@@ -142,7 +251,7 @@ const Gallery = () => {
                     setSearchTerm(e.target.value);
                     handleSearch(); // Filterung bei Eingabe auslösen
                 }}
-                placeholder="Schlagwörter eingeben"
+
             />
             <DailyCalm />
 
@@ -173,8 +282,5 @@ const Gallery = () => {
 }
 
 export default Gallery;
-
-
-
 
 

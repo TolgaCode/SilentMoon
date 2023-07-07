@@ -16,7 +16,6 @@ const Searchbar = ({ onSearch }) => {
                 type="text"
                 value={searchTerm}
                 onChange={handleSearch}
-                placeholder="Schlagwörter eingeben"
                 className="searchInput"
             />
         </div>
