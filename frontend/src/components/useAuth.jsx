@@ -10,7 +10,7 @@ export default function useAuth(code) {
 
 
     useEffect(() => {
-        axios.post('http://localhost:3000/login-spotify', {
+        axios.post(import.meta.env.VITE_BE_URL ,'login-spotify', {
             code, 
         }, {withCredentials:true} )
         .then(res => {
@@ -28,7 +28,7 @@ export default function useAuth(code) {
     useEffect(() => {
         if (!refreshToken || !expiresIn) return
         const interval = setInterval(() => {
-        axios.post('http://localhost:3000/refresh', {
+        axios.post(import.meta.env.VITE_BE_URL +'/refresh', {
             refreshToken,
         }, {withCredentials:true})
         .then(res => {
