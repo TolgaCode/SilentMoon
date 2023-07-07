@@ -3,13 +3,6 @@ import { Link } from 'react-router-dom';
 
 
 const HomeTopItem = (props) => {
-    // const thumbnailUrl = `${import.meta.env.VITE_BE_URL}/api/thumbnail/${props.thumbnail}`;
-    // const thumbnailStyle = {
-    //     backgroundImage: `url(${thumbnailUrl})`,
-    // };
-    // console.log(import.meta.env.VITE_BE_URL + `/api/thumbnail/${props.thumbnail}`);
-
-
     const thumbnailStyle = {
         backgroundImage: `url(${import.meta.env.VITE_BE_URL}/api/thumbnail/${props.thumbnail})`
     }
@@ -27,7 +20,4 @@ const HomeTopItem = (props) => {
         </div>
     );
 }
-// style={{
-//     backgroundImage: `url(${ image })`,
-// }} 
 export default HomeTopItem;
