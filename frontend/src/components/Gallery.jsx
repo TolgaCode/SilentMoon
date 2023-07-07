@@ -82,9 +82,6 @@ const Gallery = () => {
             setstressreliefButtonClicked(false);
             setStrengthButtonClicked(false);
             setFlexibilityButtonClicked(true);
-            setBeginnerButtonClicked(false);
-            setIntermediateButtonClicked(false);
-            setExpertButtonClicked(false);
             setFavButtonClicked(false);
 
 
@@ -95,9 +92,6 @@ const Gallery = () => {
             setFlexibilityButtonClicked(false);
             setStrengthButtonClicked(false);
             setstressreliefButtonClicked(true);
-            setBeginnerButtonClicked(false);
-            setIntermediateButtonClicked(false);
-            setExpertButtonClicked(false);
             setFavButtonClicked(false);
         } else if (input === 'strength') {
             setCategory(input);
@@ -106,42 +100,27 @@ const Gallery = () => {
             setFlexibilityButtonClicked(false);
             setstressreliefButtonClicked(false);
             setStrengthButtonClicked(true);
-            setBeginnerButtonClicked(false);
-            setIntermediateButtonClicked(false);
-            setExpertButtonClicked(false);
             setFavButtonClicked(false);
 
         } else if (input === 'beginner') {
-            setCategory('beginner');
             setLevel('beginner');
             setAllButtonClicked(false);
-            setFlexibilityButtonClicked(false);
-            setstressreliefButtonClicked(false);
-            setStrengthButtonClicked(false);
             setBeginnerButtonClicked(true);
             setIntermediateButtonClicked(false);
             setExpertButtonClicked(false);
             setFavButtonClicked(false);
 
         } else if (input === 'intermediate') {
-            setCategory(undefined);
             setLevel('intermediate');
             setAllButtonClicked(false);
-            setFlexibilityButtonClicked(false);
-            setstressreliefButtonClicked(false);
-            setStrengthButtonClicked(false);
             setBeginnerButtonClicked(false);
             setIntermediateButtonClicked(true);
             setExpertButtonClicked(false);
             setFavButtonClicked(false);
 
         } else if (input === 'expert') {
-            setCategory(undefined);
             setLevel('expert');
             setAllButtonClicked(false);
-            setFlexibilityButtonClicked(false);
-            setstressreliefButtonClicked(false);
-            setStrengthButtonClicked(false);
             setBeginnerButtonClicked(false);
             setIntermediateButtonClicked(false);
             setExpertButtonClicked(true);
@@ -197,14 +176,8 @@ const Gallery = () => {
     const handleLevel = (input) => {
         if (input === level) {
             setLevel(undefined);
-            setBeginnerButtonClicked(false);
-        } else if (input === 'beginner') {
-            setCategory('beginner'); // Setze die Kategorie auf 'beginner'
-            setLevel('beginner');
-            setBeginnerButtonClicked(true);
         } else {
             setLevel(input);
-            setBeginnerButtonClicked(false);
         }
     };
 
@@ -309,8 +282,5 @@ const Gallery = () => {
 }
 
 export default Gallery;
-
-
-
 
 
