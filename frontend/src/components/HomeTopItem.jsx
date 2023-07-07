@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 
 const HomeTopItem = (props) => {
-
     const thumbnailStyle = {
         backgroundImage: `url(${import.meta.env.VITE_BE_URL}/api/thumbnail/${props.thumbnail})`
     }

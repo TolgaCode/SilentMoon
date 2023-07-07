@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom"
 import { TimePicker } from "react-ios-time-picker"
 import axios from "axios"
-
 import { UserContext } from "../contexts/UserContext";
+
 import moIcon from "../assets/img/mo_btn.svg";
 import moActIcon from "../assets/img/mo_active_btn.svg";
 import tuIcon from "../assets/img/tu_btn.svg";
@@ -23,21 +23,23 @@ import '../sass/Reminder.scss'
 
 const Reminder = () => {
 
-    // const { user, setUser } = useContext(UserContext);
+    const { user, setUser } = useContext(UserContext);
+
+    console.log(user);
+
     const navigate = useNavigate();
 
-    const [time, setTime] = useState('10:00');
-    const [days, setDays] = useState([]);
+    const [time, setTime] = useState(user.reminder !== undefined ? user.reminder.time : '10:00');
+    const [days, setDays] = useState(user.reminder !== undefined ? user.reminder.days : []);
 
     const handleSubmit = async () => {
         await axios.put(import.meta.env.VITE_BE_URL + `/api/reminder`, { time, days }, { withCredentials: true })
-        navigate("/home");
+            .then(navigate("/home"))
     }
 
     const onChange = (timeValue) => {
         setTime(timeValue);
     }
-
 
     const handleDays = (input) => {
         if (days.includes(input)) {
