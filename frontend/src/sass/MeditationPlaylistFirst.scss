@@ -1,16 +1,4 @@
-// * {
-//     padding: 0;
-//     margin: 0;
-//     box-sizing: border-box;
-//   }
-  h1 {
-    color: black;
-  }
-  a {
-    text-decoration: none;
-  }
-  
-  .spotify-head {
+.spotify-head {
     display: flex;
     justify-content: center;
     width: 20rem;
@@ -18,28 +6,6 @@
     border-radius: 30px;
     color: #fff;
   }
-  
-  // .input {
-  //   position: fixed;
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   text-align: center;
-  //   width: 23.8rem;
-  //   height: 1.4rem;
-  //   top: .1rem;
-  //   right: 0;
-  //   left: 0;
-  // }
-  
-  // .songs {
-  //   height: 28vh;
-  //   bottom: 20px;
-  //   width: 25rem;
-  //   padding-bottom: 20rem;
-  //   max-height: 20rem;
-  //   overflow-y: auto;
-  // }
   
   .player {
     position: fixed;

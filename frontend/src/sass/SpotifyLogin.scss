@@ -1,29 +1,23 @@
 
 .spotify-login-div  {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     height: 100vh;
     background-image: url('../assets/img/spotify-background.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
-}
+    
 
 .playlist-h1 {
     text-align: center;
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     padding: 0 2rem;
-    color: #fff;
-    height: 22vh;
-    text-shadow: 2px 2px 5px #000;
+    color: #4A503D;
+    text-shadow: 2px 2px 2px #000;
 }
 
 .playlist-p {
-    margin: 0 20px;
+    font-size: 1.3rem;
     text-align: center;
     color: #fff;
-    height: 10vh;
     text-shadow: 2px 1.2px 2px #000;
 }
 
@@ -51,6 +45,8 @@
 }
 
 .spotifyBtn {
-    width: 20rem;
-    transform: translateY(-17rem);
+    width: 20.5rem;
+    transform: translateX(9rem);
+}
+
 }

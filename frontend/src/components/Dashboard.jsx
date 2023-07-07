@@ -1,11 +1,13 @@
-import useAuth from '../components/useAuth'
 import React, { useState, useEffect } from 'react';
+import MeditationPlaylistFirst from '../components/MeditationPlaylistFirst';
+import useAuth from '../components/useAuth'
 import SpotifyWebApi from 'spotify-web-api-node';
+import PopUpPlayer from '../components/PopUpPlayer'
+import playbtn from '../assets/img/playbtn.png'
+import Navbar from './Navbar';
 import PlaylistSearchResult from './PlaylistSearchResult';
 import Player from './Player';
-import PopUpPlayer from '../components/PopUpPlayer'
-import MeditationPlaylistFirst from '../components/MeditationPlaylistFirst';
-import playbtn from '../assets/img/playbtn.png'
+import '../sass/SpotifyLogin.scss'
 
 
 export default function Dashboard({ code }) {
@@ -56,6 +58,7 @@ export default function Dashboard({ code }) {
 
   return (
     <div className='spotify-head'>  
+      <h1 className='logoDark'>SILENT MOON</h1>
       <main className='playbtns'>
         <img className='playlist-play-btn' src={playbtn} alt=""  onClick={() => setButtonPopup(true)} width="200px" height="200px"/>
         <div className='playlist-information'>
@@ -84,6 +87,7 @@ export default function Dashboard({ code }) {
         playlistUri={playingPlaylist?.uri} 
         />
       </div> */}
+      {/* <Navbar /> */}
     </div>
 
   )
