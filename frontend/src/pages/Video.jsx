@@ -3,7 +3,10 @@ import ReactPlayer from 'react-player/file';
 import { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import heartIcon from '../assets/img/favorites_button.svg'
+import heart from '../assets/img/like_button.svg'
+import redheart from '../assets/img/red_heart.svg'
 import heartIconActive from '../assets/img/favorites_active_button.svg'
+import BackButton from "../components/BackButton.jsx";
 
 import '../sass/Video.scss'
 
@@ -25,19 +28,22 @@ const Video = () => {
     }, [])
 
     return (
-        <>
+        <article className='videoSection'>
+            <h1 className='logoDark'>SILENT MOON</h1>
+            <BackButton />
             {/* ReactPlayer streams videofile*/}
-            <img src={user.favVideos.includes(id) ? heartIconActive : heartIcon} alt="" onClick={() => { axios.put(import.meta.env.VITE_BE_URL + `/api/favouriseVideo/${id}`, {}, { withCredentials: true }).then((res) => { setUser(res.data) }) }} />
             <div className='player-wrapper'>
                 <ReactPlayer className='react-player'
                     url={import.meta.env.VITE_BE_URL + `/api/videostream/${video.filename}`}
                     controls={true}
-                    width='50%'
-                    height='50%'
+                    width='100%'
                 />
             </div>
-            <p>{video.description}</p>
-        </>
+            <img src={heart} alt="" />
+            <img src={redheart} alt="" />
+            <img src={user.favVideos?.includes(id) ? heartIconActive : heartIcon} alt="" onClick={() => { axios.put(import.meta.env.VITE_BE_URL + `/api/favouriseVideo/${id}`, {}, { withCredentials: true }).then((res) => { setUser(res.data) }) }} />
+            <p className='videoDescription'>{video.description}</p>
+        </article>
     );
 }
 
