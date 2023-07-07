@@ -58,11 +58,15 @@ const HomeView = () => {
                     <Searchbar />
                 </div>
                 <article className="sliderContainer">
-                    <h2 className="hdl-medium-green">Recommended Yoga for you</h2>
+                    <div className="recommended-hdl">
+                        <h2 className="hdl-medium-green">Recommended Yoga for you</h2>
+                    </div>
                     <VideoSlider />
                 </article>
                 <article className="sliderContainer">
-                    <h2 className="hdl-medium-darkgray" >Recommended Meditation for you</h2>
+                    <div className="recommended-hdl">
+                        <h2 className="hdl-medium-darkgray" >Recommended Meditation for you</h2>
+                    </div>
                     <Slider />
                 </article>
             </section>
