@@ -1,6 +1,7 @@
 import Gallery from '../components/Gallery';
 import Navbar from '../components/Navbar'
 import "../sass/Yoga.scss";
+import "../App.scss";
 // import Searchbar from '../components/SearchBar';
 
 const Yoga = () => {

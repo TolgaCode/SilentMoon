@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
     salt: { type: String, required: true, select: false },
     hash: { type: String, required: true, select: false },
     favVideos: [{ type: mongoose.SchemaTypes.ObjectId, ref: "Video" }],
+    favMeditation: [{ type: mongoose.SchemaTypes.ObjectId, ref: "Image" }],
     reminder: { time: { type: String, default: "00:00" }, days: [{ type: String }] }
 });
 

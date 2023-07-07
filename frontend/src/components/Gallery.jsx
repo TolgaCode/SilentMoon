@@ -19,7 +19,7 @@ import intermediateIcon from '../assets/img/intermediate_button.svg';
 import intermediateIconActive from '../assets/img/intermediate_button_active.svg'
 import flexibilityIcon from '../assets/img/flexibility_button.svg';
 import flexibilityIconActive from '../assets/img/flexibility_active_button.svg'
-import '../sass/Gallery.scss';
+import '../App.scss';
 import DailyCalm from "./DailyCalm.jsx";
 
 const Gallery = () => {
@@ -104,7 +104,6 @@ const Gallery = () => {
             } else {
                 setLevel('beginner');
             }
-            // setAllButtonClicked(false);
             setBeginnerButtonClicked((prevClicked) => !prevClicked);
             setIntermediateButtonClicked(false);
             setExpertButtonClicked(false);
@@ -115,7 +114,6 @@ const Gallery = () => {
             } else {
                 setLevel('intermediate');
             }
-            // setAllButtonClicked(false);
             setBeginnerButtonClicked(false);
             setIntermediateButtonClicked((prevClicked) => !prevClicked);
             setExpertButtonClicked(false);
@@ -126,7 +124,6 @@ const Gallery = () => {
             } else {
                 setLevel('expert');
             }
-            // setAllButtonClicked(false);
             setBeginnerButtonClicked(false);
             setIntermediateButtonClicked(false);
             setExpertButtonClicked((prevClicked) => !prevClicked);
@@ -199,7 +196,7 @@ const Gallery = () => {
             <article className="category_container">
                 <div className="button_container">
                     <button className="category_button" onClick={() => { setFavVideos(undefined); setLevel(undefined); setCategory(undefined); handleButtonCategory("all") }}><img src={allButtonClicked ? allIconActive : allIcon} alt="" /></button>
-                    <p>All</p>
+                    <p className="button_headline">All</p>
                 </div>
                 <div className="button_container">
                     {/* <button className="category_button" onClick={() => { handleFavVideos('true') }}><img src={favIcon} alt="" />
@@ -207,43 +204,43 @@ const Gallery = () => {
                     <button className={`category_button ${favButtonClicked ? 'active' : ''}`} onClick={() => { handleButtonCategory('favVideos'); handleFavVideos('true') }}>
                         <img src={favButtonClicked ? favIconActive : favIcon} alt="" />
                     </button>
-                    <p>Favorites</p>
+                    <p className="button_headline">Favorites</p>
                 </div>
                 <div className="button_container">
                     <button className={`category_button ${stressreliefButtonClicked ? 'active' : ''}`} onClick={() => { handleCategory('stressrelief'); handleButtonCategory('stressrelief') }}>
                         <img src={stressreliefButtonClicked ? anxiousIconActive : anxiousIcon} alt="" />
                     </button>
-                    <p>Stress</p>
+                    <p className="button_headline">Stress</p>
                 </div>
                 <div className="button_container">
                     <button className={`category_button ${flexibilityButtonClicked ? 'active' : ''}`} onClick={() => { handleCategory('flexibility'); handleButtonCategory('flexibility') }}>
                         <img src={flexibilityButtonClicked ? flexibilityIconActive : flexibilityIcon} alt="" />
                     </button>
-                    <p>Flexibility</p>
+                    <p className="button_headline">Flexibility</p>
                 </div>
                 <div className="button_container">
                     <button className={`category_button ${strengthButtonClicked ? 'active' : ''}`} onClick={() => { handleCategory('strength'); handleButtonCategory('strength') }}>
                         <img src={strengthButtonClicked ? strengthIconActive : strengthIcon} alt="" />
                     </button>
-                    <p>Strength</p>
+                    <p className="button_headline">Strength</p>
                 </div>
                 <div className="button_container">
                     <button className={`category_button ${beginnerButtonClicked ? 'active' : ''}`} onClick={() => { handleLevel('beginner'); handleButtonCategory('beginner') }}>
                         <img src={beginnerButtonClicked ? beginnerIconActive : beginnerIcon} alt="" />
                     </button>
-                    <p>Beginner</p>
+                    <p className="button_headline">Beginner</p>
                 </div>
                 <div className="button_container">
                     <button className={`category_button ${intermediateButtonClicked ? 'active' : ''}`} onClick={() => { handleLevel('intermediate'); handleButtonCategory('intermediate') }}>
                         <img src={intermediateButtonClicked ? intermediateIconActive : intermediateIcon} alt="" />
                     </button>
-                    <p>Intermediate</p>
+                    <p className="button_headline">Intermediate</p>
                 </div>
                 <div className="button_container">
                     <button className={`category_button ${expertButtonClicked ? 'active' : ''}`} onClick={() => { handleLevel('expert'); handleButtonCategory('expert') }}>
                         <img src={expertButtonClicked ? expertIconActive : expertIcon} alt="" />
                     </button>
-                    <p>Expert</p>
+                    <p className="button_headline">Expert</p>
                 </div>
 
             </article>
