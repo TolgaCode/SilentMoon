@@ -1,5 +1,17 @@
+@font-face {
+  font-family: 'SourceSansProSemibold';
+  src: url('../assets/font/SourceSansPro-SemiBold.ttf');
+}
+
+$sansP600: 'SourceSansProSemibold';
+
+.videoBackground {
+  background-image: url('../assets/img/popup-background.svg');
+  height: 100vh;
+}
+
 .videoSection {
-  margin: 0 4% 27% 4%;
+  margin: 0 4%;
 }
 
 .textSection {
@@ -7,10 +19,12 @@
   .title-head {
     padding: 1.5vh 0;
     text-transform: capitalize;
+    font-size: 3rem;
+    letter-spacing: 1px;
   }
   .level-head {
     color: #A1A4B2;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.7rem;
     font-family: 'SourceSansProRegular';
     font-weight: 500;
@@ -18,8 +32,14 @@
     padding-bottom: 1.5vh;
   }
   .description-head {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     text-decoration: none;
     color: #A1A4B2;
+    font-family: $sansP600;
+    letter-spacing: 0.1rem;
+  }
 }
+
+.react-player {
+  padding: 3vh 0;
 }
