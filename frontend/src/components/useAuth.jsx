@@ -10,7 +10,7 @@ export default function useAuth(code) {
 
 
     useEffect(() => {
-        axios.post(import.meta.env.VITE_BE_URL ,'login-spotify', {
+        axios.post(import.meta.env.VITE_BE_URL + '/login-spotify', {
             code, 
         }, {withCredentials:true} )
         .then(res => {
