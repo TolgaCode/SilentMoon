@@ -245,7 +245,7 @@ app.post('/login-spotify', (req, res) => {
     const code = req.body.code;
     console.log("!!!!!!", req.body.code)
     const spotifyApi = new SpotifyWebApi({
-        redirectUri: 'http://localhost:5173/music',
+        redirectUri: process.env.FRONTEND_URL,
         clientId: '162481308a2843359b4127ab067567b3',
         clientSecret: '6737ee6753be4517b2cf497a39e32d11'
     })
@@ -267,7 +267,7 @@ app.post('/login-spotify', (req, res) => {
 app.post('/refresh', authenticateToken, (req, res) => {
     const refreshToken = req.body.refreshToken
     const spotifyApi = new SpotifyWebApi({
-        redirectUri: 'http://localhost:5173/music',
+        redirectUri: process.env.FRONTEND_URL,
         clientId: '162481308a2843359b4127ab067567b3',
         clientSecret: '6737ee6753be4517b2cf497a39e32d11',
         refreshToken
