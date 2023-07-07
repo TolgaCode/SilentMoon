@@ -6,7 +6,7 @@ import SignUp from './components/SignUp';
 import Meditation from './pages/Meditation';
 import Profile from './pages/ProfilPage';
 import LogIn from './components/LogIn';
-import Playlist from './pages/PlaylistDetail'
+import PlaylistDetail from './pages/PlaylistDetail'
 import LandingPage from './pages/LandingPage';
 import Welcome from './pages/Welcome';
 import Video from './pages/Video';
@@ -24,9 +24,9 @@ function App() {
         <Route element={<ProtectedRoute />}>
           <Route path='/yoga' element={<Yoga />} />
           <Route path='/meditation' element={<Meditation />} />
-          <Route path='/music' element={<Playlist />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/video/:id' element={<Video />} />
+          <Route path='/music' element={<PlaylistDetail />} />
           <Route path='/welcome' element={<Welcome />} />
           <Route path='/home' element={<HomeView />} />
           <Route path='/reminder' element={<Reminder />} />

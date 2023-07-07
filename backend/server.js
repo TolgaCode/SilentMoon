@@ -1,5 +1,6 @@
 import "./config/config.js"
 
+
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
@@ -8,6 +9,7 @@ import { Video } from "./model/Video.js"
 import { User } from "./model/User.js";
 import { authenticateToken, generateAccessToken } from "./lib/jwt.js";
 import cookieParser from "cookie-parser";
+import SpotifyWebApi from "spotify-web-api-node";
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -236,6 +238,55 @@ app.put('/api/reminder', authenticateToken, async (req, res) => {
         console.error(err)
     }
 })
+
+
+// *** SPOTIFY LOGIN & HANDLING ***
+app.post('/login-spotify',  (req, res) => {
+    const code = req.body.code;
+    console.log("!!!!!!", req.body.code)
+     const spotifyApi = new SpotifyWebApi({
+        redirectUri: 'http://localhost:5173/music',
+        clientId: '162481308a2843359b4127ab067567b3',
+        clientSecret: '6737ee6753be4517b2cf497a39e32d11'
+    })
+
+    spotifyApi.authorizationCodeGrant(code)
+    .then(data => {
+        res.json({
+            accessToken: data.body.access_token,
+            refreshToken: data.body.refresh_token,
+            expiresIn: data.body.expires_in
+        })
+    })
+    .catch((err) => {
+        console.log(err);
+        res.sendStatus(400)
+    })
+})
+
+app.post('/refresh', authenticateToken, (req, res) => {
+    const refreshToken = req.body.refreshToken
+    const spotifyApi = new SpotifyWebApi({
+        redirectUri: 'http://localhost:5173/music',
+        clientId: '162481308a2843359b4127ab067567b3',
+        clientSecret: '6737ee6753be4517b2cf497a39e32d11',
+        refreshToken
+    })
+
+    spotifyApi.refreshAccessToken()
+    .then(data => {
+        res.json({
+            accessToken: data.body.access_token,
+            expiresIn: data.body.expires_in
+        })
+        .catch((err) => {
+            console.log(err);
+            res.sendStatus(400)
+        });
+    })
+});
+
+
 
 app.listen(PORT, () => {
     console.log("Server running on Port:", PORT);
