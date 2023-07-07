@@ -10,7 +10,6 @@ export default function useAuth(code) {
 
 
     useEffect(() => {
-        console.log(code)
         axios.post('http://localhost:3000/login-spotify', {
             code, 
         }, {withCredentials:true} )
