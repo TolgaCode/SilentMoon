@@ -1,0 +1,35 @@
+.spotify-head {
+    // display: flex;
+    // justify-content: center;
+    // flex-direction: column;
+    border: 1px solid red;
+
+    .playbtns {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transform: translateX(10rem);
+        height: 10vh;
+        width: 50vw;
+    }
+
+    .playlist-play-btn {
+        width: 4.3rem;
+        height: 4.3rem;
+        transform: translateY(3rem);
+        margin-right: 4rem;
+        border: 1px solid red;
+    }
+
+    .playlist-information {
+        transform: translateY(3rem);
+        border: 1px solid red;
+        width: 100%;
+    }
+
+    .spotifyBtn {
+        width: 20rem;
+        transform: translateY(-17rem);
+    }
+
+}
