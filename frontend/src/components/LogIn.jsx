@@ -43,6 +43,7 @@ export default function LogIn() {
             <form className="login-form" onSubmit={loginHandler}>
                 <input className="input" type="email" id="email" placeholder="EMAIL" value={user.email} onChange={(e) => { setUser({ ...user, email: e.currentTarget.value }) }}></input>
                 <input className="input" type="password" id="password" placeholder="PASSWORD" value={user.password} onChange={(e) => { setUser({ ...user, password: e.currentTarget.value }) }}></input>
+                <small className="errorMessage">{error}</small>
 
                 <button className="bigBtn-red">LOGIN</button>
             </form>
