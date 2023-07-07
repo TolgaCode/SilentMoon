@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
-
+import BackButton from "./BackButton.jsx";
 import "../sass/SignUp.scss"
 
 const defaultErrorState = Object.freeze({
@@ -62,12 +62,27 @@ export default function SignUp() {
 
     return (
         <section className="signUp-container">
+            <div className="backBtn_sign_container">
+                <BackButton />
+            </div>
             <h1 className="hdl-big-green-center" >Create your Account</h1>
             <form onSubmit={handleSubmit} className="signup-form">
                 <input className="input" type="text" id="name" placeholder="NAME" value={data.name} onChange={(e) => { setData({ ...data, name: e.currentTarget.value }) }} />
+                <small className="errorMessage">
+                    {error.name && error.name}
+                </small>
                 <input className="input" type="text" id="surname" placeholder="SURNAME" value={data.surname} onChange={(e) => { setData({ ...data, surname: e.currentTarget.value }) }} />
+                <small className="errorMessage">
+                    {error.surname && error.name}
+                </small>
                 <input className="input" type="email" id="email" placeholder="EMAIL" value={data.email} onChange={(e) => { setData({ ...data, email: e.currentTarget.value }) }} />
+                <small className="errorMessage">
+                    {error.email && error.email}
+                </small>
                 <input className="input" type="password" id="password" placeholder="PASSWORD" value={data.password} onChange={(e) => { setData({ ...data, password: e.currentTarget.value }) }} />
+                <small className="errorMessage">
+                    {error.password && error.password}
+                </small>
 
                 <button className="bigBtn-red">REGISTER</button>
             </form>

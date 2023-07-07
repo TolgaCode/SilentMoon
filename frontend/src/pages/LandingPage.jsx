@@ -11,7 +11,7 @@ const LandingPage = () => {
             <h2 className='intro-Hdl'>We are what we do</h2>
             <p className='intro-Text'>Thousands of people are using silent moon <br /> for meditation and yoga classes.</p>
             <Link to={"/signup"} className="intro-Btn-Link" ><button className='bigBtn-red'>SIGN UP</button></Link>
-            <Link to={"/login"} className="intro-Link">ALREADY HAVE AN ACCOUNT? <span> LOG IN</span></Link>
+            <Link to={"/login"} className="intro-Link">ALREADY HAVE AN ACCOUNT? &nbsp; <span> LOG IN</span></Link>
         </section>
     );
 }
