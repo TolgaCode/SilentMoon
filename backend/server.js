@@ -4,7 +4,7 @@ import "./config/config.js"
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-
+import { Image } from "./model/Image.js"
 import { Video } from "./model/Video.js"
 import { User } from "./model/User.js";
 import { authenticateToken, generateAccessToken } from "./lib/jwt.js";
@@ -29,6 +29,10 @@ mongoose.connect(process.env.DB);
 // mongoose.connect represents the active MongoDB connection managed by mongoose 
 let gridFSBucket = new mongoose.mongo.GridFSBucket(mongoose.connection, {
     bucketName: 'videobucket'
+});
+
+let gridFSBucketImage = new mongoose.mongo.GridFSBucket(mongoose.connection, {
+    bucketName: 'imagebucket'
 });
 
 // ========================
@@ -286,7 +290,60 @@ app.post('/refresh', authenticateToken, (req, res) => {
         })
 });
 
+app.get('/api/meditationimages/', authenticateToken, async (req, res) => {
+    let { level, category, favMeditations } = req.query;
 
+    const user = await User.findOne({ email: req.userEmail });
+
+    // using spread operator along with conditional logic including the level and category criteria 
+    // if the condition is true the level/category property and corresponding value is added to the query
+    try {
+        const images = await Image.find({
+            // using object spreader to conditionally include the level property when the condition is met, otherwise the resulting object will be empty
+            // only filter for level, if level is not undefined or 'undefined
+            ...((level !== undefined && level !== 'undefined') && { level: level }),
+            ...((category !== undefined && category !== 'undefined') && { category: category }),
+            ...((favMeditations !== undefined && favMeditations !== 'undefined') && { _id: { $in: user.favMeditations } })
+
+        });
+        // console.log({ level })
+        // console.log({ category })
+        res.send(images)
+    }
+    catch (err) {
+        console.error(err)
+    }
+});
+
+app.get('/api/image/:filename', async (req, res) => {
+    const { filename } = req.params;
+    try {
+        const image = await Image.findOne({ filename: filename });
+        // get the thumbnail image using open download stream and pipe it to the frontend as response
+        gridFSBucketImage.openDownloadStreamByName(image.filename).pipe(res)
+    }
+    catch (err) {
+        console.error(err)
+    }
+})
+
+app.put('/api/favouriseMeditation/:id', authenticateToken, async (req, res) => {
+    const { id } = req.params;
+    try {
+        let user = await User.findOne({ email: req.userEmail });
+        if (user.favMeditations.includes(id)) {
+            await User.updateOne({ _id: user._id }, { $pull: { favMeditations: id } })
+        }
+        else {
+            await User.updateOne({ _id: user._id }, { $push: { favMeditations: id } })
+        }
+        user = await User.findOne({ email: req.userEmail });
+        res.send(user)
+    }
+    catch (err) {
+        console.error(err)
+    }
+})
 
 app.listen(PORT, () => {
     console.log("Server running on Port:", PORT);

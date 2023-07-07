@@ -25,6 +25,7 @@ import reminderIcon from "../assets/img/reminder_button.svg"
 
 import Navbar from "../components/Navbar";
 import FavVideoSlider from "../components/FavVideoSlider"
+import FavMeditationSlider from "../components/FavMeditationSlider"
 
 const ProfilPage = () => {
     const { user, logout } = useContext(UserContext);
@@ -55,7 +56,7 @@ const ProfilPage = () => {
                 <h2 className="hdl-medium-green">Find your yoga favorites here</h2>
                 <FavVideoSlider className="profilSliderStyle" />
                 <h2 className="hdl-medium-green">Find your meditations favorites here</h2>
-                <FavVideoSlider className="profilSliderStyle" />
+                <FavMeditationSlider className="profilSliderStyle" />
             </section>
             <Navbar />
         </>
