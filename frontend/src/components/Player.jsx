@@ -1,6 +1,7 @@
 import React from "react";
 import SpotifyPlayer from "react-spotify-web-playback";
 import { useEffect, useState } from "react";
+import '../sass/MeditationPlaylistFirst.scss'
 
 export default function Player({ accessToken, playlistUri }) {
   const [play, setPlay] = useState(false);

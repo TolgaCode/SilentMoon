@@ -1,4 +1,5 @@
-.playlistDetail {
+
+.spotify-login-div  {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,5 +27,28 @@
     text-shadow: 2px 1.2px 2px #000;
 }
 
+.playbtns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateX(10rem);
+    height: 10vh;
+}
+
+.playlist-play-btn {
+    width: 4.3rem;
+    height: 4.3rem;
+    transform: translateY(30rem);
+    margin-right: 42rem;
+}
+
+.playlist-information {
+    transform: translateY(3rem);
+    margin-right: 40rem;
+}
 
 
+.spotifyBtn {
+    width: 20rem;
+    transform: translateY(-17rem);
+}

@@ -4,7 +4,6 @@ import SpotifyWebApi from 'spotify-web-api-node';
 import PlaylistSearchResult from './PlaylistSearchResult';
 import Player from './Player';
 import PopUpPlayer from '../components/PopUpPlayer'
-// import cover from '../assets/img/guidedMedi.png'
 import MeditationPlaylistFirst from '../components/MeditationPlaylistFirst';
 import playbtn from '../assets/img/playbtn.png'
 
@@ -57,9 +56,12 @@ export default function Dashboard({ code }) {
 
   return (
     <div className='spotify-head'>  
-      <main>
-        <h4>Click the Playlist cover for real magic</h4>
-        <img className='playlist-cover' src={playbtn} alt=""  onClick={() => setButtonPopup(true)} width="200px" height="200px"/>
+      <main className='playbtns'>
+        <img className='playlist-play-btn' src={playbtn} alt=""  onClick={() => setButtonPopup(true)} width="200px" height="200px"/>
+        <div className='playlist-information'>
+        <h3>Guided Meditation</h3>
+        <p>Playlist</p>
+        </div>
       </main>
       <PopUpPlayer trigger={buttonPopup} setTrigger={setButtonPopup}>
       <MeditationPlaylistFirst
