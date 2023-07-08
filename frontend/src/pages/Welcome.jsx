@@ -11,14 +11,16 @@ const Welcome = () => {
 
 
     return (
-        <section className="welcome_section">
-            <h1 className='logoLight'>SILENT MOON</h1>
-            <article className='welcome_text_container'>
-                <h2 className='welcome_text'>Hi {user.name}, welcome to Silent Moon</h2>
-            </article>
-            <Link to={"/reminder"}><button className='bigBtn-red'>GET STARTED</button></Link>
-        </section>
+        <section>
+            <section className="welcome_section">
+                <h1 className='logoLight'>SILENT MOON</h1>
+                <article className='welcome_text_container'>
+                    <h2 className='welcome_text'>Hi {user.name}, welcome to Silent Moon</h2>
+                </article>
 
+            </section>
+            <Link to={"/reminder"}><button className='bigBtn-red welcome'>GET STARTED</button></Link>
+        </section>
     );
 }
 

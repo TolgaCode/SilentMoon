@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
 import { Link } from "react-router-dom"
 import "../sass/ProfilPage.scss"
+import "../sass/SliderItem.scss"
 
 import moIcon from "../assets/img/mo_btn.svg";
 import moActIcon from "../assets/img/mo_active_btn.svg";
