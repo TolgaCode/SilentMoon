@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 import Slider from "../components/Slider";
 import VideoSlider from "../components/VideoSlider.jsx";
 import HomeTopItem from "../components/HomeTopItem";
-import Searchbar from "../components/SearchBar.jsx";
+
 import '../sass/HomeView.scss'
 import '../App.scss'
 
@@ -34,16 +34,7 @@ const HomeView = () => {
                     <HomeTopItem />
                     <HomeTopItem />
                 </article>
-
-                <div className="searchbar_container">
-                    <Searchbar />
-                </div>
-                <article className="sliderContainer">
-                    <div className="recommended-hdl">
-                        <h2 className="hdl-medium-green">Recommended Yoga for you</h2>
-                    </div>
-                    <VideoSlider />
-                </article>
+                <VideoSlider />
                 <article className="sliderContainer">
                     <div className="recommended-hdl">
                         <h2 className="hdl-medium-darkgray" >Recommended Meditation for you</h2>
