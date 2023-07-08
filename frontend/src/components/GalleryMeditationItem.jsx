@@ -3,7 +3,7 @@ import { useEffect, useState, useContext } from "react";
 import redheart from '../assets/img/red_heart.svg'
 import emptyheart from '../assets/img/empty_heart.svg'
 import { UserContext } from '../contexts/UserContext';
-import "../sass/GalleryItem.scss";
+import "../sass/GalleryMeditationItem.scss";
 import axios from "axios";
 
 const GalleryMeditationItem = (props) => {
@@ -31,14 +31,15 @@ const GalleryMeditationItem = (props) => {
 
     return (
         <div className={`gallery_item ${size}`} style={backgroundImageStyle}>
-
-            <img src={user.favMeditations?.includes(props.id) ? redheart : emptyheart} alt="" onClick={() => { axios.put(import.meta.env.VITE_BE_URL + `/api/favouriseMeditation/${props.id}`, {}, { withCredentials: true }).then((res) => { setUser(res.data) }) }} />
-            <Link to={"/music"} >
-                <div >
-                    <h3 className="video_category_headline">{props.category}</h3>
-                </div >
-            </Link >
-        </div>
+            <div className="gallery_meditation_item">
+                <img className="heart_icon_meditation" src={user.favMeditations?.includes(props.id) ? redheart : emptyheart} alt="" onClick={() => { axios.put(import.meta.env.VITE_BE_URL + `/api/favouriseMeditation/${props.id}`, {}, { withCredentials: true }).then((res) => { setUser(res.data) }) }} />
+                <Link to={"/music"} >
+                    <div >
+                        <h3 className="video_category_headline">{props.title}</h3>
+                    </div >
+                </Link >
+            </div>
+        </div >
 
     )
 };

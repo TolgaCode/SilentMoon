@@ -1,0 +1,108 @@
+{
+    "images": [
+        {
+            "title": "mind Reset",
+            "category": "strength",
+            "level": "intermediate",
+            "filepath": "./img_meditation/carlos-de-miguel-Kq2WV3WPrYU-unsplash.jpg",
+            "filename": "carlos-de-miguel-Kq2WV3WPrYU-unsplash.jpg",
+            "description": " Inverted V-shaped pose, strengthens upper body, stretches hamstrings, calves, and spine."
+        },
+        {
+            "title": "harmony Vitality",
+            "category": "stressrelief",
+            "level": "intermediate",
+            "filepath": "./img_meditation/chelsea-gates-n8L1VYaypcw-unsplash.jpg",
+            "filename": "chelsea-gates-n8L1VYaypcw-unsplash.jpg",
+            "description": "Arms gracefully raised, legs and arms move in contrasting directions with fluidity."
+        },
+        {
+            "title": "deep breathing",
+            "category": "stressrelief",
+            "level": "beginner",
+            "filepath": "./img_meditation/amelia-bartlett-45IxHIky6xM-unsplash.jpg",
+            "filename": "amelia-bartlett-45IxHIky6xM-unsplash.jpg",
+            "description": "Deep Breathing Meditation: Focus on breath, inhale deeply, exhale slowly, promotes relaxation, clarity, and mindfulness."
+        },
+        {
+            "title": "rising Balance",
+            "category": "flexability",
+            "level": "beginner",
+            "filepath": "./img_meditation/jeremy-thomas-FO7bKvgETgQ-unsplash.jpg",
+            "filename": "jeremy-thomas-FO7bKvgETgQ-unsplash.jpg",
+            "description": "Seated forward bend, stretches legs, spine, hips, promotes flexibility, relaxation, and mental calmness."
+        },
+        {
+            "title": "eight angle",
+            "category": "strength",
+            "level": "expert",
+            "filepath": "./img_meditation/engin-akyurt-F9veLGAvews-unsplash.jpg",
+            "filename": "engin-akyurt-F9veLGAvews-unsplash.jpg",
+            "description": "Arm balances, legs crossed, core engaged, twists, builds strength and balance. Enhances body awareness and coordination."
+        },
+        {
+            "title": "kapotasana",
+            "category": "flexability",
+            "level": "intermediate",
+            "filepath": "./img_meditation/jared-rice-8w7b4SdhOgw-unsplash.jpg",
+            "filename": "jared-rice-8w7b4SdhOgw-unsplash.jpg",
+            "description": "Hips square, one leg forward, other leg extended back, deep hip opening stretch. Calms the mind and reduces stress and anxiety."
+        },
+        {
+            "title": "foot to knee",
+            "category": "stressrelief",
+            "level": "beginner",
+            "filepath": "./img_meditation/kike-vega-F2qh3yjz6Jk-unsplash.jpg",
+            "filename": "kike-vega-F2qh3yjz6Jk-unsplash.jpg",
+            "description": "Arms reach overhead, fold forward, stretches hamstrings, lengthens spine, promotes relaxation."
+        },
+        {
+            "title": "mountain toe",
+            "category": "flexability",
+            "level": "expert",
+            "filepath": "./img_meditation/ksenia-makagonova-V-TIPBoC_2M-unsplash.jpg",
+            "filename": "ksenia-makagonova-V-TIPBoC_2M-unsplash.jpg",
+            "description": "Sitting pose, legs extended, reach for toes, stretches hamstrings, toes, and calves. Focusing on the breath and body during the pose enhances mindfulness and body awareness."
+        },
+        {
+            "title": "sirsasana",
+            "category": "strength",
+            "level": "intermediate",
+            "filepath": "./img_meditation/matteo-di-iorio-VD-Vjc8VmRA-unsplash.jpg",
+            "filename": "matteo-di-iorio-VD-Vjc8VmRA-unsplash.jpg",
+            "description": "Inverted pose, balancing on the head, improves circulation, builds strength, and enhances focus and mental clarity."
+        },
+        {
+            "title": "painless now",
+            "category": "strength",
+            "level": "expert",
+            "filepath": "./img_meditation/sage-friedman-HS5CLnQbCOc-unsplash.jpg",
+            "filename": "sage-friedman-HS5CLnQbCOc-unsplash.jpg",
+            "description": "Arm balance, palms support body, strengthens arms and core, improves focus and balance."
+        },
+        {
+            "title": "forward stretch",
+            "category": "stressrelief",
+            "level": "intermediate",
+            "filepath": "./img_meditation/zac-durant-_6HzPU9Hyfg-unsplash.jpg",
+            "filename": "zac-durant-_6HzPU9Hyfg-unsplash.jpg",
+            "description": "Standing balance pose, one leg lifted, torso parallel to the ground, strengthens legs and core, improves balance and stability."
+        },
+        {
+            "title": "warrior 1",
+            "category": "flexability",
+            "level": "beginner",
+            "filepath": "./img_meditation/rktkn-iGj6MTyjC3M-unsplash.jpg",
+            "filename": "rktkn-iGj6MTyjC3M-unsplash.jpg",
+            "description": "Standing pose, front knee bent, back leg extended, arms lifted, strengthens legs and core, improves posture."
+        },
+        {
+            "title": "waving",
+            "category": "strength",
+            "level": "intermediate",
+            "filepath": "./img_meditation/olimpo-avila-salazar-c9I-U1mPDyA-unsplash.jpg",
+            "filename": "olimpo-avila-salazar-c9I-U1mPDyA-unsplash.jpg",
+            "description": "Dynamic movement, flowing spine from flexion to extension, improves spinal mobility and flexibility."
+        }
+    ]
+}

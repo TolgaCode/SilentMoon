@@ -151,11 +151,13 @@ a {
 }
 
 .hdl-gray-sites {
-  font-family: $sansP900;
   font-size: 2.4rem;
   color: $darkGray;
   text-align: center;
   margin: 35px 0 20px 0;
+  font-family: $sansP700;
+  font-size: 3rem;
+  letter-spacing: 1px;
 }
 
 .subhead-sites {
@@ -163,6 +165,8 @@ a {
   color: $lightGray;
   text-align: center;
   margin-bottom: 40px;
+  font-size: 1.3rem;
+  letter-spacing: 0.1rem;
 }
 
 .video_category_headline {
@@ -185,4 +189,9 @@ a {
   font-family: $sansP400;
   margin-bottom: 5px;
   letter-spacing: 1px;
+}
+
+.button_headline {
+  font-size: 1.3rem;
+  color: $lightGray;
 }

@@ -3,7 +3,13 @@
     src: url('../assets/font/SourceSansPro-Black.ttf');
 }
 
+@font-face {
+    font-family: 'SourceSansProBold';
+    src: url('../assets/font/SourceSansPro-Bold.ttf');
+}
+
 $sansP900: 'SourceSansProBlack';
+$sansP700: 'SourceSansProBold';
 
 .nameLogoutSection {
     display: flex;
@@ -12,11 +18,12 @@ $sansP900: 'SourceSansProBlack';
 }
 
 .nameHeadline {
-    font-family: $sansP900;
-    font-size: 2.4rem;
+    font-family: $sansP700;
+    font-size: 3rem;
     color: #3F414E;
     text-align: center;
     padding: 3vh 0;
+    letter-spacing: 1px;
 }
 
 .iconSize {
