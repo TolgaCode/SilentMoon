@@ -3,7 +3,7 @@ import axios from "axios";
 import { UserContext } from "../contexts/UserContext.jsx";
 
 import Navbar from "../components/Navbar";
-import Slider from "../components/Slider";
+import MeditationSlider from "../components/MeditationSlider.jsx";
 import VideoSlider from "../components/VideoSlider.jsx";
 import HomeTopItem from "../components/HomeTopItem";
 import Searchbar from "../components/SearchBar.jsx";
@@ -48,7 +48,7 @@ const HomeView = () => {
                     <div className="recommended-hdl">
                         <h2 className="hdl-medium-darkgray" >Recommended Meditation for you</h2>
                     </div>
-                    <Slider />
+                    <MeditationSlider />
                 </article>
             </section>
             <Navbar />
