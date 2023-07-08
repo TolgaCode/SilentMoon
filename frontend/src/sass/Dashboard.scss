@@ -1,35 +1,43 @@
 .spotify-head {
-    // display: flex;
-    // justify-content: center;
-    // flex-direction: column;
-    border: 1px solid red;
+    height: 100vh;
+    z-index: -3;
+    background-image: url('../assets/img/music-background.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    .dashboard-back-button {
+        margin-left: 2rem;
+        border: 1px solid red;
+    }
+
+    .meditation-tipps {
+        height: 5vh;
+        margin: 34rem 3rem 5rem 3rem;
+    }
+
+    .meditation-h5 {
+        font-size: 2.1rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .meditation-p {
+       font-size: 1.1rem;
+    }
+
+    .playlist-head {
+        margin-left: 4rem;
+    }
 
     .playbtns {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        transform: translateX(10rem);
-        height: 10vh;
-        width: 50vw;
+        padding: 13rem 18rem 0 3rem;
     }
 
     .playlist-play-btn {
         width: 4.3rem;
         height: 4.3rem;
-        transform: translateY(3rem);
-        margin-right: 4rem;
-        border: 1px solid red;
     }
 
-    .playlist-information {
-        transform: translateY(3rem);
-        border: 1px solid red;
-        width: 100%;
-    }
-
-    .spotifyBtn {
-        width: 20rem;
-        transform: translateY(-17rem);
-    }
-
+  
 }
