@@ -63,6 +63,7 @@ const FavoriteList = () => {
                             id={item._id}
                             category={item.category}
                             filename={item.filename}
+                            title={item.title}
                             level={item.level}
                         />
                     )

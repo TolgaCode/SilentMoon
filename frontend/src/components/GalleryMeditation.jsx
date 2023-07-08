@@ -205,7 +205,7 @@ const GalleryMeditation = () => {
                 </div>
                 <div className="button_container">
 
-                    <button className={`category_button ${favButtonClicked ? 'active' : ''}`} onClick={() => { handleButtonCategory('favMeditation'); handleFavImages('true') }}>
+                    <button className={`category_button ${favButtonClicked ? 'active' : ''}`} onClick={() => { handleButtonCategory('favMeditations'); handleFavImages('true') }}>
                         <img src={favButtonClicked ? favIconActive : favIcon} alt="" />
                     </button>
                     <p className="button_headline">Favorites</p>
@@ -238,7 +238,7 @@ const GalleryMeditation = () => {
                     <button className={`category_button ${intermediateButtonClicked ? 'active' : ''}`} onClick={() => { handleLevel('intermediate'); handleButtonCategory('intermediate') }}>
                         <img src={intermediateButtonClicked ? intermediateIconActive : intermediateIcon} alt="" />
                     </button>
-                    <p className="button_container">Intermediate</p>
+                    <p className="button_headline">Intermediate</p>
                 </div>
                 <div className="button_container">
                     <button className={`category_button ${expertButtonClicked ? 'active' : ''}`} onClick={() => { handleLevel('expert'); handleButtonCategory('expert') }}>
