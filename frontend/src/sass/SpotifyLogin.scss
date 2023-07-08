@@ -1,52 +1,54 @@
-
 .spotify-login-div  {
     height: 100vh;
     background-image: url('../assets/img/spotify-background.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 .playlist-h1 {
     text-align: center;
     font-size: 2.1rem;
     padding: 0 2rem;
     color: #4A503D;
-    text-shadow: 2px 2px 2px #000;
-}
-
-.playlist-p {
-    font-size: 1.3rem;
-    text-align: center;
-    color: #fff;
-    text-shadow: 2px 1.2px 2px #000;
-}
-
-.playbtns {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transform: translateX(10rem);
-    height: 10vh;
-    width: 50vw;
-}
-
-.playlist-play-btn {
-    width: 4.3rem;
-    height: 4.3rem;
-    transform: translateY(3rem);
-    margin-right: 4rem;
-    border: 1px solid red;
-}
-
-.playlist-information {
-    transform: translateY(3rem);
-    border: 1px solid red;
-    width: 100%;
+    margin: 10rem 2rem 0 2rem;
+    width: 80%;
 }
 
 .spotifyBtn {
     width: 20.5rem;
-    transform: translateX(9rem);
+    margin-top: 2rem;
 }
+
+.playlist-p {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #4A503D;
+    margin: 1.6rem 1.6rem 0 1.6rem;
+    width: 48%;
+}
+
+// .playbtns {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     transform: translateX(10rem);
+//     height: 10vh;
+//     width: 50vw;
+// }
+
+// .playlist-play-btn {
+//     width: 4.3rem;
+//     height: 4.3rem;
+//     transform: translateY(3rem);
+//     margin-right: 4rem;
+// }
+
+// .playlist-information {
+//     transform: translateY(3rem);
+//     width: 100%;
+// }
+
 
 }
